@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="d9f087dd-22d1-4452-aaf0-bc6eed256bd0">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate1">
+        <node name="add1" position="3.00,-6.00" prototype="math.add">
+            <port name="value1" type="float" value="25.0"/>
+        </node>
+        <node name="frame1" position="8.00,-8.00" prototype="core.frame"/>
+        <node name="grid1" position="7.00,0.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="20"/>
+            <port name="rows" type="int" value="20"/>
+        </node>
+        <node name="rect1" position="1.00,-2.00" prototype="corevector.rect">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="translate1" position="2.00,3.00" prototype="corevector.translate"/>
+        <node name="wave1" position="1.00,-5.00" prototype="math.wave">
+            <port name="min" type="float" value="2.0"/>
+            <port name="max" type="float" value="20.0"/>
+            <port name="period" type="float" value="100.0"/>
+            <port name="offset" type="float" value="552.0"/>
+        </node>
+        <node name="wave2" position="7.00,-5.00" prototype="math.wave">
+            <port name="min" type="float" value="300.0"/>
+            <port name="max" type="float" value="980.0"/>
+            <port name="period" type="float" value="100.0"/>
+            <port name="offset" type="float" value="14.0"/>
+        </node>
+        <conn input="translate1.shape" output="rect1"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="grid1.width" output="wave2"/>
+        <conn input="grid1.height" output="wave2"/>
+        <conn input="rect1.width" output="wave1"/>
+        <conn input="rect1.height" output="wave1"/>
+        <conn input="wave2.offset" output="frame1"/>
+        <conn input="add1.value2" output="frame1"/>
+        <conn input="wave1.offset" output="add1"/>
+    </node>
+</ndbx>

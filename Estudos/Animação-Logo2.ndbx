@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="f46a928e-33cd-44aa-9c95-49ad17df0596">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="rotate1">
+        <node name="colorize1" position="10.00,11.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="7.0"/>
+        </node>
+        <node name="combine1" position="10.00,10.00" prototype="list.combine"/>
+        <node name="connect1" position="7.00,7.00" prototype="corevector.connect"/>
+        <node name="coordinates1" position="7.00,6.00" prototype="math.coordinates"/>
+        <node name="divide1" position="6.00,3.00" prototype="math.divide">
+            <port name="value1" type="float" value="360.0"/>
+            <port name="value2" type="float" value="360.0"/>
+        </node>
+        <node name="divide2" position="14.00,4.00" prototype="math.divide">
+            <port name="value2" type="float" value="4.0"/>
+        </node>
+        <node name="frame1" position="14.00,0.00" prototype="core.frame"/>
+        <node name="line1" position="12.00,8.00" prototype="corevector.line">
+            <port name="point2" type="point" value="0.00,0.00"/>
+        </node>
+        <node name="number1" position="6.00,0.00" prototype="math.number">
+            <port name="value" type="float" value="6.0"/>
+        </node>
+        <node name="random_numbers1" position="10.00,3.00" prototype="math.random_numbers">
+            <port name="start" type="float" value="60.0"/>
+            <port name="seed" type="int" value="671"/>
+        </node>
+        <node name="range1" position="6.00,4.00" prototype="math.range">
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <node name="rotate1" position="10.00,13.00" prototype="corevector.rotate"/>
+        <node name="round_segments1" position="7.00,8.00" prototype="corevector.round_segments">
+            <port name="d" type="float" value="40.0"/>
+        </node>
+        <conn input="coordinates1.distance" output="random_numbers1"/>
+        <conn input="random_numbers1.amount" output="number1"/>
+        <conn input="divide1.value2" output="number1"/>
+        <conn input="range1.step" output="divide1"/>
+        <conn input="coordinates1.angle" output="range1"/>
+        <conn input="connect1.points" output="coordinates1"/>
+        <conn input="round_segments1.shape" output="connect1"/>
+        <conn input="line1.point1" output="coordinates1"/>
+        <conn input="combine1.list1" output="round_segments1"/>
+        <conn input="combine1.list2" output="line1"/>
+        <conn input="colorize1.shape" output="combine1"/>
+        <conn input="rotate1.shape" output="colorize1"/>
+        <conn input="random_numbers1.seed" output="frame1"/>
+        <conn input="divide2.value1" output="frame1"/>
+        <conn input="rotate1.angle" output="divide2"/>
+    </node>
+</ndbx>

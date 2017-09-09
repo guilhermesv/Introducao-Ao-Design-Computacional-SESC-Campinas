@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="a827203b-2482-4379-b7c5-bbf0dda6622b">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine4">
+        <node name="add1" position="-5.00,-6.00" prototype="math.add">
+            <port name="value2" type="float" value="204.0"/>
+        </node>
+        <node name="add2" position="15.00,-4.00" prototype="math.add">
+            <port name="value2" type="float" value="204.0"/>
+        </node>
+        <node name="colorize1" position="-3.00,5.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="4.0"/>
+        </node>
+        <node name="colorize2" position="20.00,5.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="4.0"/>
+        </node>
+        <node name="combine1" position="-10.00,6.00" prototype="list.combine"/>
+        <node name="combine2" position="-10.00,9.00" prototype="list.combine"/>
+        <node name="combine3" position="10.00,6.00" prototype="list.combine"/>
+        <node name="combine4" position="10.00,9.00" prototype="list.combine"/>
+        <node name="coordinates1" position="-10.00,1.00" prototype="math.coordinates">
+            <port name="angle" type="float" value="-24.0"/>
+        </node>
+        <node name="coordinates2" position="-5.00,1.00" prototype="math.coordinates">
+            <port name="angle" type="float" value="-62.0"/>
+            <port name="distance" type="float" value="-100.0"/>
+        </node>
+        <node name="coordinates3" position="10.00,1.00" prototype="math.coordinates">
+            <port name="angle" type="float" value="-24.0"/>
+        </node>
+        <node name="coordinates4" position="15.00,1.00" prototype="math.coordinates">
+            <port name="angle" type="float" value="-62.0"/>
+            <port name="distance" type="float" value="-100.0"/>
+        </node>
+        <node name="divide1" position="-5.00,-7.00" prototype="math.divide"/>
+        <node name="divide2" position="15.00,-7.00" prototype="math.divide"/>
+        <node name="ellipse1" position="-10.00,7.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="ellipse2" position="-3.00,3.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="200.0"/>
+            <port name="height" type="float" value="200.0"/>
+        </node>
+        <node name="ellipse3" position="20.00,3.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="200.0"/>
+            <port name="height" type="float" value="200.0"/>
+        </node>
+        <node name="ellipse4" position="10.00,7.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="frame1" position="-5.00,-8.00" prototype="core.frame"/>
+        <node name="frame2" position="15.00,-8.00" prototype="core.frame"/>
+        <node name="line1" position="-8.00,4.00" prototype="corevector.line"/>
+        <node name="line2" position="12.00,4.00" prototype="corevector.line"/>
+        <node name="negate1" position="2.00,-1.00" prototype="math.negate"/>
+        <node name="negate2" position="22.00,-1.00" prototype="math.negate"/>
+        <node name="number1" position="0.00,-2.00" prototype="math.number">
+            <port name="value" type="float" value="143.0"/>
+        </node>
+        <node name="number2" position="20.00,-2.00" prototype="math.number">
+            <port name="value" type="float" value="143.0"/>
+        </node>
+        <node name="random_numbers1" position="10.00,-3.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="1"/>
+            <port name="start" type="float" value="181.0"/>
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <node name="random_numbers2" position="15.00,-3.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="1"/>
+            <port name="end" type="float" value="180.0"/>
+        </node>
+        <node name="wave1" position="-10.00,-4.00" prototype="math.wave">
+            <port name="max" type="float" value="360.0"/>
+            <port name="period" type="float" value="180.0"/>
+            <port name="offset" type="float" value="6.0"/>
+        </node>
+        <node name="wave2" position="-5.00,-4.00" prototype="math.wave">
+            <port name="max" type="float" value="360.0"/>
+            <port name="period" type="float" value="180.0"/>
+            <port name="offset" type="float" value="6.0"/>
+        </node>
+        <node name="wave3" position="10.00,-1.00" prototype="math.wave">
+            <port name="max" type="float" value="360.0"/>
+            <port name="period" type="float" value="180.0"/>
+            <port name="offset" type="float" value="6.0"/>
+        </node>
+        <node name="wave4" position="15.00,-1.00" prototype="math.wave">
+            <port name="max" type="float" value="360.0"/>
+            <port name="period" type="float" value="180.0"/>
+            <port name="offset" type="float" value="6.0"/>
+        </node>
+        <conn input="line1.point1" output="coordinates1"/>
+        <conn input="line1.point2" output="coordinates2"/>
+        <conn input="negate1.value" output="number1"/>
+        <conn input="combine1.list1" output="coordinates1"/>
+        <conn input="combine1.list2" output="coordinates2"/>
+        <conn input="ellipse1.position" output="combine1"/>
+        <conn input="combine2.list2" output="line1"/>
+        <conn input="combine2.list1" output="ellipse1"/>
+        <conn input="colorize1.shape" output="ellipse2"/>
+        <conn input="combine2.list3" output="colorize1"/>
+        <conn input="coordinates1.angle" output="wave1"/>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="add1.value1" output="divide1"/>
+        <conn input="wave1.offset" output="divide1"/>
+        <conn input="wave2.offset" output="add1"/>
+        <conn input="coordinates2.angle" output="wave2"/>
+        <conn input="line2.point1" output="coordinates3"/>
+        <conn input="line2.point2" output="coordinates4"/>
+        <conn input="negate2.value" output="number2"/>
+        <conn input="combine3.list1" output="coordinates3"/>
+        <conn input="combine3.list2" output="coordinates4"/>
+        <conn input="ellipse4.position" output="combine3"/>
+        <conn input="combine4.list2" output="line2"/>
+        <conn input="combine4.list1" output="ellipse4"/>
+        <conn input="colorize2.shape" output="ellipse3"/>
+        <conn input="combine4.list3" output="colorize2"/>
+        <conn input="coordinates3.angle" output="wave3"/>
+        <conn input="divide2.value1" output="frame2"/>
+        <conn input="add2.value1" output="divide2"/>
+        <conn input="wave3.offset" output="divide2"/>
+        <conn input="wave4.offset" output="add2"/>
+        <conn input="coordinates4.angle" output="wave4"/>
+        <conn input="wave3.max" output="random_numbers1"/>
+        <conn input="wave4.max" output="random_numbers2"/>
+    </node>
+</ndbx>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="2af9f372-1ebe-4377-9770-1a330d760d54">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="convert_range1">
+        <node name="compare1" position="8.00,6.00" prototype="math.compare">
+            <port name="value2" type="float" value="50.0"/>
+        </node>
+        <node name="convert_range1" position="12.00,7.00" prototype="math.convert_range">
+            <port name="target_start" type="float" value="20.0"/>
+            <port name="target_end" type="float" value="100.0"/>
+        </node>
+        <node name="cull1" position="7.00,9.00" prototype="list.cull"/>
+        <node name="max1" position="14.00,3.00" prototype="math.max"/>
+        <node name="min1" position="12.00,2.00" prototype="math.min"/>
+        <node name="random_numbers1" position="7.00,1.00" prototype="math.random_numbers"/>
+        <conn input="cull1.list" output="random_numbers1"/>
+        <conn input="compare1.value1" output="random_numbers1"/>
+        <conn input="cull1.booleans" output="compare1"/>
+        <conn input="min1.values" output="random_numbers1"/>
+        <conn input="max1.values" output="random_numbers1"/>
+        <conn input="convert_range1.source_end" output="max1"/>
+        <conn input="convert_range1.value" output="random_numbers1"/>
+    </node>
+</ndbx>

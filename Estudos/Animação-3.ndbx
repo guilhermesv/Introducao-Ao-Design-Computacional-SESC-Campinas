@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="98d05174-2889-41a2-8cc9-c0b6e61260b5">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate1">
+        <node name="color1" position="15.00,7.00" prototype="color.color">
+            <port name="color" type="color" value="#ffbf00ff"/>
+        </node>
+        <node name="color2" position="18.00,7.00" prototype="color.color">
+            <port name="color" type="color" value="#0700ffff"/>
+        </node>
+        <node name="color3" position="21.00,7.00" prototype="color.color">
+            <port name="color" type="color" value="#ff0000ff"/>
+        </node>
+        <node name="colorize1" position="9.00,14.00" prototype="corevector.colorize"/>
+        <node name="combine1" position="3.00,7.00" prototype="list.combine"/>
+        <node name="combine2" position="15.00,9.00" prototype="list.combine"/>
+        <node name="ellipse1" position="7.00,1.00" prototype="corevector.ellipse"/>
+        <node name="ellipse2" position="9.00,11.00" prototype="corevector.ellipse"/>
+        <node name="frame1" position="14.00,5.00" prototype="core.frame"/>
+        <node name="point1" position="3.00,5.00" prototype="corevector.point"/>
+        <node name="point2" position="7.00,5.00" prototype="corevector.point"/>
+        <node name="point3" position="11.00,5.00" prototype="corevector.point"/>
+        <node name="polygon1" position="11.00,1.00" prototype="corevector.polygon">
+            <port name="position" type="point" value="0.00,15.00"/>
+            <port name="radius" type="float" value="59.0"/>
+            <port name="align" type="boolean" value="true"/>
+        </node>
+        <node name="range1" position="10.00,8.00" prototype="math.range">
+            <port name="start" type="float" value="1.0"/>
+            <port name="step" type="float" value="0.15"/>
+        </node>
+        <node name="rect1" position="3.00,1.00" prototype="corevector.rect"/>
+        <node name="repeat1" position="15.00,8.00" prototype="list.repeat">
+            <port name="amount" type="int" value="60"/>
+        </node>
+        <node name="repeat2" position="18.00,8.00" prototype="list.repeat">
+            <port name="amount" type="int" value="60"/>
+        </node>
+        <node name="repeat3" position="21.00,8.00" prototype="list.repeat">
+            <port name="amount" type="int" value="60"/>
+        </node>
+        <node name="resample1" position="3.00,3.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+            <port name="points" type="int" value="60"/>
+        </node>
+        <node name="resample2" position="7.00,3.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+            <port name="points" type="int" value="60"/>
+        </node>
+        <node name="resample3" position="11.00,3.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+            <port name="points" type="int" value="60"/>
+        </node>
+        <node name="shift1" position="3.00,9.00" prototype="list.shift">
+            <port name="amount" type="int" value="613"/>
+        </node>
+        <node name="shift2" position="13.00,11.00" prototype="list.shift">
+            <port name="amount" type="int" value="613"/>
+        </node>
+        <node name="slice1" position="3.00,10.00" prototype="list.slice">
+            <port name="size" type="int" value="60"/>
+        </node>
+        <node name="slice2" position="13.00,12.00" prototype="list.slice">
+            <port name="size" type="int" value="60"/>
+        </node>
+        <node name="translate1" position="3.00,16.00" prototype="corevector.translate"/>
+        <conn input="resample1.shape" output="rect1"/>
+        <conn input="resample2.shape" output="ellipse1"/>
+        <conn input="resample3.shape" output="polygon1"/>
+        <conn input="point1.value" output="resample1"/>
+        <conn input="point2.value" output="resample2"/>
+        <conn input="point3.value" output="resample3"/>
+        <conn input="combine1.list1" output="point1"/>
+        <conn input="combine1.list2" output="point2"/>
+        <conn input="combine1.list3" output="point3"/>
+        <conn input="shift1.list" output="combine1"/>
+        <conn input="slice1.list" output="shift1"/>
+        <conn input="shift1.amount" output="frame1"/>
+        <conn input="ellipse2.width" output="range1"/>
+        <conn input="ellipse2.height" output="range1"/>
+        <conn input="translate1.translate" output="slice1"/>
+        <conn input="repeat1.list" output="color1"/>
+        <conn input="repeat2.list" output="color2"/>
+        <conn input="repeat3.list" output="color3"/>
+        <conn input="combine2.list1" output="repeat1"/>
+        <conn input="combine2.list2" output="repeat2"/>
+        <conn input="combine2.list3" output="repeat3"/>
+        <conn input="shift2.amount" output="frame1"/>
+        <conn input="shift2.list" output="combine2"/>
+        <conn input="colorize1.shape" output="ellipse2"/>
+        <conn input="translate1.shape" output="colorize1"/>
+        <conn input="slice2.list" output="shift2"/>
+        <conn input="colorize1.fill" output="slice2"/>
+    </node>
+</ndbx>

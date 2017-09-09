@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="ea5977a4-f242-4894-bc5b-07e14459f713">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network">
+        <node name="Forma" position="20.00,9.00" prototype="core.network" renderedChild="colorize5">
+            <node name="colorize5" position="16.00,5.00" prototype="corevector.colorize"/>
+            <node name="connect2" position="16.00,4.00" prototype="corevector.connect"/>
+            <node name="grid5" position="16.00,2.00" prototype="corevector.grid">
+                <port name="width" type="float" value="800.0"/>
+                <port name="height" type="float" value="800.0"/>
+            </node>
+            <node name="pick4" position="16.00,3.00" prototype="list.pick">
+                <port name="amount" type="int" value="10"/>
+                <port name="seed" type="int" value="41"/>
+            </node>
+            <port childReference="pick4.seed" description="The random variation." label="" name="seed" range="value" type="int" value="41" widget="int"/>
+            <port childReference="colorize5.fill" description="The new fill color. Set alpha to 0 for no fill." label="" name="fill" range="value" type="color" value="#000000ff" widget="color"/>
+            <conn input="colorize5.shape" output="connect2"/>
+            <conn input="pick4.list" output="grid5"/>
+            <conn input="connect2.points" output="pick4"/>
+        </node>
+        <node name="Forma1" position="26.00,9.00" prototype="core.network" renderedChild="colorize5">
+            <node name="colorize5" position="16.00,7.00" prototype="corevector.colorize"/>
+            <node name="connect2" position="16.00,4.00" prototype="corevector.connect"/>
+            <node name="grid5" position="16.00,2.00" prototype="corevector.grid">
+                <port name="width" type="float" value="800.0"/>
+                <port name="height" type="float" value="800.0"/>
+            </node>
+            <node name="pick4" position="16.00,3.00" prototype="list.pick">
+                <port name="amount" type="int" value="10"/>
+                <port name="seed" type="int" value="41"/>
+            </node>
+            <node name="round_segments1" position="16.00,5.00" prototype="corevector.round_segments">
+                <port name="d" type="float" value="326.0"/>
+            </node>
+            <port childReference="pick4.seed" description="The random variation." label="" name="seed" range="value" type="int" value="41" widget="int"/>
+            <port childReference="colorize5.fill" description="The new fill color. Set alpha to 0 for no fill." label="" name="fill" range="value" type="color" value="#000000ff" widget="color"/>
+            <conn input="pick4.list" output="grid5"/>
+            <conn input="connect2.points" output="pick4"/>
+            <conn input="round_segments1.shape" output="connect2"/>
+            <conn input="colorize5.shape" output="round_segments1"/>
+        </node>
+        <node name="colorize1" position="-17.00,14.00" prototype="corevector.colorize"/>
+        <node name="colorize2" position="-6.00,14.00" prototype="corevector.colorize"/>
+        <node name="colorize3" position="5.00,12.00" prototype="corevector.colorize"/>
+        <node name="colorize4" position="16.00,7.00" prototype="corevector.colorize"/>
+        <node name="connect1" position="16.00,6.00" prototype="corevector.connect"/>
+        <node name="count1" position="-16.00,6.00" prototype="list.count"/>
+        <node name="count2" position="-6.00,6.00" prototype="list.count"/>
+        <node name="count3" position="9.00,8.00" prototype="list.count"/>
+        <node name="ellipse1" position="39.00,6.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="grid1" position="-16.00,2.00" prototype="corevector.grid">
+            <port name="width" type="float" value="800.0"/>
+            <port name="height" type="float" value="800.0"/>
+        </node>
+        <node name="grid2" position="-6.00,2.00" prototype="corevector.grid">
+            <port name="width" type="float" value="800.0"/>
+            <port name="height" type="float" value="800.0"/>
+        </node>
+        <node name="grid3" position="6.00,5.00" prototype="corevector.grid">
+            <port name="width" type="float" value="800.0"/>
+            <port name="height" type="float" value="800.0"/>
+        </node>
+        <node name="grid4" position="16.00,4.00" prototype="corevector.grid">
+            <port name="width" type="float" value="800.0"/>
+            <port name="height" type="float" value="800.0"/>
+        </node>
+        <node name="hsb_color1" position="-13.00,11.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="200.0"/>
+            <port name="brightness" type="float" value="255.0"/>
+        </node>
+        <node name="hsb_color2" position="-2.00,11.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="200.0"/>
+            <port name="brightness" type="float" value="255.0"/>
+        </node>
+        <node name="hsb_color3" position="9.00,10.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="200.0"/>
+            <port name="brightness" type="float" value="255.0"/>
+        </node>
+        <node name="hsb_color4" position="22.00,7.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="134.0"/>
+            <port name="brightness" type="float" value="238.0"/>
+        </node>
+        <node name="hsb_color5" position="29.00,7.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="134.0"/>
+            <port name="brightness" type="float" value="238.0"/>
+        </node>
+        <node name="pick1" position="-8.00,-5.00" prototype="list.pick"/>
+        <node name="pick2" position="6.00,6.00" prototype="list.pick">
+            <port name="amount" type="int" value="26"/>
+            <port name="seed" type="int" value="41"/>
+        </node>
+        <node name="pick3" position="16.00,5.00" prototype="list.pick">
+            <port name="amount" type="int" value="10"/>
+            <port name="seed" type="int" value="41"/>
+        </node>
+        <node name="random_character1" position="-4.00,-4.00" prototype="string.random_character"/>
+        <node name="random_numbers1" position="-4.00,-5.00" prototype="math.random_numbers"/>
+        <node name="random_numbers2" position="-19.00,8.00" prototype="math.random_numbers">
+            <port name="start" type="float" value="10.0"/>
+            <port name="end" type="float" value="81.0"/>
+            <port name="seed" type="int" value="3"/>
+        </node>
+        <node name="random_numbers3" position="-13.00,8.00" prototype="math.random_numbers">
+            <port name="end" type="float" value="255.0"/>
+            <port name="seed" type="int" value="7"/>
+        </node>
+        <node name="random_numbers4" position="-2.00,8.00" prototype="math.random_numbers">
+            <port name="end" type="float" value="255.0"/>
+        </node>
+        <node name="random_numbers5" position="-7.00,8.00" prototype="math.random_numbers">
+            <port name="start" type="float" value="10.0"/>
+            <port name="end" type="float" value="81.0"/>
+        </node>
+        <node name="random_numbers6" position="9.00,9.00" prototype="math.random_numbers">
+            <port name="end" type="float" value="255.0"/>
+        </node>
+        <node name="random_numbers7" position="20.00,4.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="3"/>
+            <port name="end" type="float" value="255.0"/>
+            <port name="seed" type="int" value="16"/>
+        </node>
+        <node name="random_numbers8" position="26.00,4.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="3"/>
+            <port name="end" type="float" value="255.0"/>
+            <port name="seed" type="int" value="33"/>
+        </node>
+        <node name="rect1" position="-19.00,9.00" prototype="corevector.rect"/>
+        <node name="rect2" position="-7.00,9.00" prototype="corevector.rect"/>
+        <node name="scatter1" position="-12.00,-4.00" prototype="corevector.scatter"/>
+        <node name="scatter2" position="35.00,6.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="984"/>
+            <port name="seed" type="int" value="11"/>
+        </node>
+        <node name="seed" position="-1.00,2.00" prototype="math.number">
+            <port name="value" type="float" value="73.0"/>
+        </node>
+        <node name="shuffle1" position="-8.00,-4.00" prototype="list.shuffle"/>
+        <node name="star1" position="5.00,4.00" prototype="corevector.star">
+            <port name="points" type="int" value="8"/>
+            <port name="outer" type="float" value="91.0"/>
+            <port name="inner" type="float" value="72.0"/>
+        </node>
+        <node name="textpath1" position="35.00,5.00" prototype="corevector.textpath">
+            <port name="text" type="string" value="OLA"/>
+            <port name="font_name" type="string" value="Impact"/>
+            <port name="font_size" type="float" value="312.0"/>
+        </node>
+        <node name="translate1" position="-17.00,11.00" prototype="corevector.translate"/>
+        <node name="translate2" position="-6.00,11.00" prototype="corevector.translate"/>
+        <node name="translate3" position="5.00,8.00" prototype="corevector.translate"/>
+        <node name="translate4" position="35.00,9.00" prototype="corevector.translate"/>
+        <node name="wiggle1" position="-6.00,4.00" prototype="corevector.wiggle">
+            <port name="offset" type="point" value="100.00,100.00"/>
+            <port name="seed" type="int" value="1"/>
+        </node>
+        <node name="wiggle2" position="-12.00,-5.00" prototype="corevector.wiggle"/>
+        <conn input="translate1.shape" output="rect1"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="rect1.width" output="random_numbers2"/>
+        <conn input="rect1.height" output="random_numbers2"/>
+        <conn input="count1.list" output="grid1"/>
+        <conn input="random_numbers2.amount" output="count1"/>
+        <conn input="colorize1.shape" output="translate1"/>
+        <conn input="random_numbers3.amount" output="count1"/>
+        <conn input="hsb_color1.hue" output="random_numbers3"/>
+        <conn input="colorize1.fill" output="hsb_color1"/>
+        <conn input="translate2.shape" output="rect2"/>
+        <conn input="rect2.width" output="random_numbers5"/>
+        <conn input="rect2.height" output="random_numbers5"/>
+        <conn input="random_numbers5.amount" output="count2"/>
+        <conn input="colorize2.shape" output="translate2"/>
+        <conn input="random_numbers4.amount" output="count2"/>
+        <conn input="hsb_color2.hue" output="random_numbers4"/>
+        <conn input="colorize2.fill" output="hsb_color2"/>
+        <conn input="wiggle1.shape" output="grid2"/>
+        <conn input="count2.list" output="wiggle1"/>
+        <conn input="translate2.translate" output="wiggle1"/>
+        <conn input="random_numbers5.seed" output="seed"/>
+        <conn input="random_numbers4.seed" output="seed"/>
+        <conn input="wiggle1.seed" output="seed"/>
+        <conn input="colorize3.shape" output="translate3"/>
+        <conn input="hsb_color3.hue" output="random_numbers6"/>
+        <conn input="colorize3.fill" output="hsb_color3"/>
+        <conn input="translate3.shape" output="star1"/>
+        <conn input="pick2.list" output="grid3"/>
+        <conn input="translate3.translate" output="pick2"/>
+        <conn input="count3.list" output="pick2"/>
+        <conn input="random_numbers6.amount" output="count3"/>
+        <conn input="colorize4.shape" output="connect1"/>
+        <conn input="pick3.list" output="grid4"/>
+        <conn input="connect1.points" output="pick3"/>
+        <conn input="Forma.seed" output="random_numbers7"/>
+        <conn input="Forma.fill" output="hsb_color4"/>
+        <conn input="hsb_color4.hue" output="random_numbers7"/>
+        <conn input="Forma1.seed" output="random_numbers8"/>
+        <conn input="Forma1.fill" output="hsb_color5"/>
+        <conn input="hsb_color5.hue" output="random_numbers8"/>
+        <conn input="scatter2.shape" output="textpath1"/>
+        <conn input="translate4.translate" output="scatter2"/>
+        <conn input="translate4.shape" output="ellipse1"/>
+    </node>
+</ndbx>

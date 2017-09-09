@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="9d8bfe61-d476-4d73-9c2a-256f0dd45cdf">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine2">
+        <node name="add1" position="2.00,8.00" prototype="math.add"/>
+        <node name="add2" position="47.00,5.00" prototype="math.add"/>
+        <node name="combine1" position="19.00,17.00" prototype="list.combine"/>
+        <node name="combine2" position="38.00,17.00" prototype="list.combine"/>
+        <node name="copy1" position="2.00,12.00" prototype="corevector.copy"/>
+        <node name="count1" position="2.00,2.00" prototype="list.count"/>
+        <node name="count2" position="19.00,3.00" prototype="list.count"/>
+        <node name="count3" position="38.00,3.00" prototype="list.count"/>
+        <node name="divide1" position="22.00,1.00" prototype="math.divide"/>
+        <node name="ellipse1" position="2.00,11.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="ellipse2" position="19.00,14.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="ellipse3" position="38.00,14.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="frame1" position="26.00,-1.00" prototype="core.frame"/>
+        <node name="frame2" position="45.00,-1.00" prototype="core.frame"/>
+        <node name="make_point1" position="19.00,12.00" prototype="corevector.make_point"/>
+        <node name="make_point2" position="38.00,12.00" prototype="corevector.make_point"/>
+        <node name="random_numbers1" position="-2.00,5.00" prototype="math.random_numbers">
+            <port name="start" type="float" value="100.0"/>
+            <port name="end" type="float" value="200.0"/>
+        </node>
+        <node name="range1" position="3.00,5.00" prototype="math.range">
+            <port name="end" type="float" value="100.0"/>
+        </node>
+        <node name="range2" position="28.00,4.00" prototype="math.range">
+            <port name="end" type="float" value="100.0"/>
+        </node>
+        <node name="range3" position="47.00,4.00" prototype="math.range">
+            <port name="end" type="float" value="100.0"/>
+        </node>
+        <node name="rect1" position="-2.00,-1.00" prototype="corevector.rect"/>
+        <node name="rect2" position="20.00,-3.00" prototype="corevector.rect"/>
+        <node name="rect3" position="39.00,-3.00" prototype="corevector.rect"/>
+        <node name="scale1" position="2.00,13.00" prototype="corevector.scale"/>
+        <node name="scatter1" position="-2.00,0.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="86"/>
+            <port name="seed" type="int" value="-8"/>
+        </node>
+        <node name="scatter2" position="18.00,1.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="40"/>
+            <port name="seed" type="int" value="-8"/>
+        </node>
+        <node name="scatter3" position="37.00,1.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="40"/>
+            <port name="seed" type="int" value="-8"/>
+        </node>
+        <node name="shift1" position="2.00,9.00" prototype="list.shift">
+            <port name="amount" type="int" value="2352"/>
+        </node>
+        <node name="shift2" position="28.00,10.00" prototype="list.shift">
+            <port name="amount" type="int" value="2520"/>
+        </node>
+        <node name="shift3" position="19.00,10.00" prototype="list.shift">
+            <port name="amount" type="int" value="2954"/>
+        </node>
+        <node name="translate1" position="-2.00,15.00" prototype="corevector.translate"/>
+        <node name="translate2" position="19.00,16.00" prototype="corevector.translate"/>
+        <node name="translate3" position="38.00,16.00" prototype="corevector.translate"/>
+        <node name="wave1" position="2.00,7.00" prototype="math.wave">
+            <port name="min" type="float" value="3.0"/>
+            <port name="max" type="float" value="170.0"/>
+        </node>
+        <node name="wave2" position="28.00,8.00" prototype="math.wave">
+            <port name="max" type="float" value="15.0"/>
+        </node>
+        <node name="wave3" position="23.00,8.00" prototype="math.wave">
+            <port name="min" type="float" value="-10.0"/>
+            <port name="max" type="float" value="10.0"/>
+        </node>
+        <node name="wave4" position="42.00,8.00" prototype="math.wave">
+            <port name="min" type="float" value="-10.0"/>
+            <port name="max" type="float" value="10.0"/>
+        </node>
+        <node name="wave5" position="47.00,8.00" prototype="math.wave">
+            <port name="max" type="float" value="15.0"/>
+        </node>
+        <conn input="scatter1.shape" output="rect1"/>
+        <conn input="count1.list" output="scatter1"/>
+        <conn input="translate1.shape" output="scale1"/>
+        <conn input="translate1.translate" output="scatter1"/>
+        <conn input="copy1.shape" output="ellipse1"/>
+        <conn input="scale1.shape" output="copy1"/>
+        <conn input="copy1.copies" output="count1"/>
+        <conn input="random_numbers1.amount" output="count1"/>
+        <conn input="range1.end" output="count1"/>
+        <conn input="wave1.period" output="count1"/>
+        <conn input="add1.value2" output="wave1"/>
+        <conn input="wave1.offset" output="range1"/>
+        <conn input="shift1.list" output="add1"/>
+        <conn input="scale1.scale" output="shift1"/>
+        <conn input="count2.list" output="scatter2"/>
+        <conn input="translate2.translate" output="scatter2"/>
+        <conn input="range2.end" output="count2"/>
+        <conn input="wave2.offset" output="range2"/>
+        <conn input="ellipse2.position" output="make_point1"/>
+        <conn input="shift2.list" output="wave2"/>
+        <conn input="shift3.list" output="wave3"/>
+        <conn input="make_point1.y" output="shift3"/>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="shift2.amount" output="divide1"/>
+        <conn input="shift3.amount" output="divide1"/>
+        <conn input="combine1.list2" output="translate2"/>
+        <conn input="scatter2.shape" output="rect2"/>
+        <conn input="wave3.offset" output="range2"/>
+        <conn input="translate2.shape" output="ellipse2"/>
+        <conn input="ellipse2.width" output="shift2"/>
+        <conn input="ellipse2.height" output="shift2"/>
+        <conn input="wave2.period" output="count2"/>
+        <conn input="wave3.period" output="count2"/>
+        <conn input="count3.list" output="scatter3"/>
+        <conn input="translate3.translate" output="scatter3"/>
+        <conn input="range3.end" output="count3"/>
+        <conn input="ellipse3.position" output="make_point2"/>
+        <conn input="combine2.list2" output="translate3"/>
+        <conn input="scatter3.shape" output="rect3"/>
+        <conn input="translate3.shape" output="ellipse3"/>
+        <conn input="wave5.period" output="count3"/>
+        <conn input="wave4.period" output="count3"/>
+        <conn input="make_point2.y" output="wave4"/>
+        <conn input="ellipse3.width" output="wave5"/>
+        <conn input="ellipse3.height" output="wave5"/>
+        <conn input="add2.value1" output="range3"/>
+        <conn input="add2.value2" output="frame2"/>
+        <conn input="wave4.offset" output="add2"/>
+        <conn input="wave5.offset" output="add2"/>
+    </node>
+</ndbx>

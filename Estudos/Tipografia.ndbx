@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="1d9fe266-f6d8-4ad4-aeea-2b175d335491">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine2">
+        <node name="add1" position="11.00,3.00" prototype="math.add">
+            <port name="value2" type="float" value="1.0"/>
+        </node>
+        <node name="align1" position="-1.00,7.00" prototype="corevector.align"/>
+        <node name="characters1" position="2.00,2.00" prototype="string.characters"/>
+        <node name="color1" position="-3.00,0.00" prototype="color.color">
+            <port name="color" type="color" value="#817c4dff"/>
+        </node>
+        <node name="color2" position="-3.00,1.00" prototype="color.color">
+            <port name="color" type="color" value="#ff5353ff"/>
+        </node>
+        <node name="colorize1" position="-3.00,8.00" prototype="corevector.colorize"/>
+        <node name="combine1" position="-3.00,3.00" prototype="list.combine"/>
+        <node name="combine2" position="-2.00,14.00" prototype="list.combine"/>
+        <node name="connect1" position="0.00,12.00" prototype="corevector.connect">
+            <port name="closed" type="boolean" value="false"/>
+        </node>
+        <node name="integer1" position="6.00,3.00" prototype="math.integer"/>
+        <node name="length1" position="6.00,2.00" prototype="string.length"/>
+        <node name="make_point1" position="2.00,8.00" prototype="corevector.make_point"/>
+        <node name="random_numbers1" position="6.00,5.00" prototype="math.random_numbers">
+            <port name="start" type="float" value="-400.0"/>
+            <port name="end" type="float" value="400.0"/>
+        </node>
+        <node name="random_numbers2" position="9.00,5.00" prototype="math.random_numbers">
+            <port name="start" type="float" value="-400.0"/>
+            <port name="end" type="float" value="400.0"/>
+            <port name="seed" type="int" value="1"/>
+        </node>
+        <node name="random_numbers3" position="2.00,4.00" prototype="math.random_numbers">
+            <port name="start" type="float" value="100.0"/>
+            <port name="end" type="float" value="300.0"/>
+        </node>
+        <node name="seed" position="10.00,-1.00" prototype="math.number">
+            <port name="value" type="float" value="11.0"/>
+        </node>
+        <node name="string1" position="2.00,1.00" prototype="string.string">
+            <port name="value" type="string" value="tipografia"/>
+        </node>
+        <node name="textpath1" position="-1.00,6.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="Avenir-HeavyOblique"/>
+            <port name="font_size" type="float" value="496.0"/>
+        </node>
+        <node name="translate1" position="-3.00,12.00" prototype="corevector.translate"/>
+        <conn input="characters1.string" output="string1"/>
+        <conn input="length1.string" output="string1"/>
+        <conn input="integer1.value" output="length1"/>
+        <conn input="random_numbers1.amount" output="integer1"/>
+        <conn input="random_numbers2.amount" output="integer1"/>
+        <conn input="make_point1.x" output="random_numbers1"/>
+        <conn input="make_point1.y" output="random_numbers2"/>
+        <conn input="combine1.list1" output="color1"/>
+        <conn input="combine1.list2" output="color2"/>
+        <conn input="translate1.translate" output="make_point1"/>
+        <conn input="textpath1.text" output="characters1"/>
+        <conn input="colorize1.fill" output="combine1"/>
+        <conn input="translate1.shape" output="colorize1"/>
+        <conn input="random_numbers3.amount" output="integer1"/>
+        <conn input="textpath1.font_size" output="random_numbers3"/>
+        <conn input="connect1.points" output="make_point1"/>
+        <conn input="combine2.list1" output="connect1"/>
+        <conn input="combine2.list2" output="translate1"/>
+        <conn input="align1.shape" output="textpath1"/>
+        <conn input="colorize1.shape" output="align1"/>
+        <conn input="random_numbers1.seed" output="seed"/>
+        <conn input="add1.value1" output="seed"/>
+        <conn input="random_numbers2.seed" output="add1"/>
+    </node>
+</ndbx>

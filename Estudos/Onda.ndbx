@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="99b578b0-0ed6-40d9-aec2-03b4eddbe458">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="make_point1">
+        <node name="coordinates1" position="31.00,5.00" prototype="math.coordinates">
+            <port name="distance" type="float" value="105.0"/>
+        </node>
+        <node name="cos2" position="23.00,3.00" prototype="math.cos"/>
+        <node name="make_point1" position="4.00,6.00" prototype="corevector.make_point"/>
+        <node name="make_point2" position="10.00,6.00" prototype="corevector.make_point"/>
+        <node name="make_point3" position="19.00,6.00" prototype="corevector.make_point"/>
+        <node name="make_point4" position="-3.00,6.00" prototype="corevector.make_point"/>
+        <node name="multiply1" position="14.00,4.00" prototype="math.multiply">
+            <port name="value2" type="float" value="100.0"/>
+        </node>
+        <node name="multiply2" position="23.00,4.00" prototype="math.multiply">
+            <port name="value2" type="float" value="126.0"/>
+        </node>
+        <node name="multiply3" position="19.00,4.00" prototype="math.multiply">
+            <port name="value2" type="float" value="126.0"/>
+        </node>
+        <node name="number1" position="20.00,-2.00" prototype="math.number">
+            <port name="value" type="float" value="360.0"/>
+        </node>
+        <node name="number2" position="24.00,-2.00" prototype="math.number">
+            <port name="value" type="float" value="2.0"/>
+        </node>
+        <node name="radians1" position="14.00,2.00" prototype="math.radians"/>
+        <node name="radians2" position="23.00,2.00" prototype="math.radians"/>
+        <node name="radians3" position="19.00,2.00" prototype="math.radians"/>
+        <node name="range1" position="4.00,2.00" prototype="math.range">
+            <port name="end" type="float" value="400.0"/>
+            <port name="step" type="float" value="3.0"/>
+        </node>
+        <node name="range2" position="10.00,2.00" prototype="math.range">
+            <port name="end" type="float" value="400.0"/>
+        </node>
+        <node name="range3" position="14.00,0.00" prototype="math.range">
+            <port name="end" type="float" value="360.0"/>
+            <port name="step" type="float" value="0.9"/>
+        </node>
+        <node name="range4" position="23.00,1.00" prototype="math.range">
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <node name="range5" position="32.00,0.00" prototype="math.range">
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <node name="range6" position="19.00,1.00" prototype="math.range">
+            <port name="end" type="float" value="502.0"/>
+        </node>
+        <node name="range7" position="34.00,2.00" prototype="math.range">
+            <port name="end" type="float" value="729.0"/>
+            <port name="step" type="float" value="0.05"/>
+        </node>
+        <node name="reverse1" position="14.00,1.00" prototype="list.reverse"/>
+        <node name="sin1" position="19.00,3.00" prototype="math.sin"/>
+        <node name="sin2" position="14.00,3.00" prototype="math.sin"/>
+        <node name="wave1" position="5.00,4.00" prototype="math.wave">
+            <port name="min" type="float" value="-100.0"/>
+            <port name="period" type="float" value="400.0"/>
+        </node>
+        <node name="wave2" position="-2.00,4.00" prototype="math.wave">
+            <port name="min" type="float" value="-100.0"/>
+            <port name="period" type="float" value="400.0"/>
+            <port name="offset" type="float" value="1038.0"/>
+        </node>
+        <conn input="wave1.offset" output="range1"/>
+        <conn input="make_point1.y" output="wave1"/>
+        <conn input="make_point1.x" output="range1"/>
+        <conn input="make_point2.x" output="range2"/>
+        <conn input="make_point2.y" output="multiply1"/>
+        <conn input="multiply2.value1" output="cos2"/>
+        <conn input="radians2.degrees" output="range4"/>
+        <conn input="cos2.value" output="radians2"/>
+        <conn input="radians3.degrees" output="range6"/>
+        <conn input="sin1.value" output="radians3"/>
+        <conn input="multiply3.value1" output="sin1"/>
+        <conn input="range4.end" output="number1"/>
+        <conn input="range4.step" output="number2"/>
+        <conn input="sin2.value" output="radians1"/>
+        <conn input="multiply1.value1" output="sin2"/>
+        <conn input="reverse1.list" output="range3"/>
+        <conn input="radians1.degrees" output="reverse1"/>
+        <conn input="make_point3.y" output="multiply2"/>
+        <conn input="make_point3.x" output="multiply3"/>
+        <conn input="coordinates1.angle" output="range5"/>
+        <conn input="coordinates1.distance" output="range7"/>
+        <conn input="range6.end" output="number1"/>
+        <conn input="range6.step" output="number2"/>
+        <conn input="make_point4.y" output="wave2"/>
+    </node>
+</ndbx>

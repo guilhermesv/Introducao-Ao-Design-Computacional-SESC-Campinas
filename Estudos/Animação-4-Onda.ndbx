@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="59dd85c4-1e0d-4259-89dd-959c304191fc">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="colorize1">
+        <node name="add1" position="6.00,2.00" prototype="math.add">
+            <port name="value2" type="float" value="731.0"/>
+        </node>
+        <node name="colorize1" position="6.00,6.00" prototype="corevector.colorize"/>
+        <node name="convert_range1" position="12.00,2.00" prototype="math.convert_range">
+            <port name="source_end" type="float" value="3.0"/>
+            <port name="target_end" type="float" value="100.0"/>
+        </node>
+        <node name="divide1" position="10.00,0.00" prototype="math.divide">
+            <port name="value2" type="float" value="2.0"/>
+        </node>
+        <node name="frame1" position="10.00,-1.00" prototype="core.frame"/>
+        <node name="hsb_color1" position="12.00,3.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="168.0"/>
+            <port name="brightness" type="float" value="182.0"/>
+            <port name="alpha" type="float" value="137.0"/>
+        </node>
+        <node name="network1" position="6.00,4.00" prototype="core.network" renderedChild="translate1">
+            <node name="add3" position="6.00,-2.00" prototype="math.add">
+                <port name="value2" type="float" value="20.0"/>
+            </node>
+            <node name="ellipse1" position="2.00,3.00" prototype="corevector.ellipse"/>
+            <node name="number1" position="4.00,-3.00" prototype="math.number"/>
+            <node name="translate1" position="2.00,4.00" prototype="corevector.translate"/>
+            <node name="wave1" position="3.00,0.00" prototype="math.wave">
+                <port name="min" type="float" value="10.0"/>
+                <port name="offset" type="float" value="300.0"/>
+            </node>
+            <node name="wave2" position="6.00,0.00" prototype="math.wave">
+                <port name="min" type="float" value="10.0"/>
+                <port name="offset" type="float" value="300.0"/>
+            </node>
+            <port childReference="number1.value" description="" label="" name="fase" range="value" type="float" value="0.0" widget="float"/>
+            <conn input="wave1.offset" output="number1"/>
+            <conn input="wave2.offset" output="add3"/>
+            <conn input="add3.value1" output="number1"/>
+            <conn input="ellipse1.width" output="wave1"/>
+            <conn input="ellipse1.height" output="wave2"/>
+            <conn input="translate1.shape" output="ellipse1"/>
+        </node>
+        <node name="range1" position="6.00,0.00" prototype="math.range">
+            <port name="end" type="float" value="12.0"/>
+            <port name="step" type="float" value="2.0"/>
+        </node>
+        <conn input="add1.value1" output="range1"/>
+        <conn input="network1.fase" output="add1"/>
+        <conn input="colorize1.shape" output="network1"/>
+        <conn input="convert_range1.value" output="range1"/>
+        <conn input="hsb_color1.hue" output="convert_range1"/>
+        <conn input="colorize1.fill" output="hsb_color1"/>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="add1.value2" output="divide1"/>
+    </node>
+</ndbx>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="03abb45d-0303-4d02-b8bc-779108f7bea6">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine2">
+        <node name="CompKm" position="8.00,4.00" prototype="data.lookup">
+            <port name="key" type="string" value="CompKm"/>
+        </node>
+        <node name="DuracaoDasViagensMin" position="16.00,4.00" prototype="data.lookup">
+            <port name="key" type="string" value="DuracaoDasViagensMin"/>
+        </node>
+        <node name="DuracaoDasViagensMin1" position="21.00,4.00" prototype="data.lookup">
+            <port name="key" type="string" value="MediaPassageiroM2"/>
+        </node>
+        <node name="Estacoes" position="12.00,4.00" prototype="data.lookup">
+            <port name="key" type="string" value="Estacoes"/>
+        </node>
+        <node name="Linha" position="-4.00,4.00" prototype="data.lookup">
+            <port name="key" type="string" value="Linha"/>
+        </node>
+        <node name="QtdTransportadoDiaMilhares" position="4.00,4.00" prototype="data.lookup">
+            <port name="key" type="string" value="QtdTransportadoDiaMilhares"/>
+        </node>
+        <node name="Torta" position="4.00,19.00" prototype="core.network" renderedChild="colorize1">
+            <node name="add1" position="4.00,16.00" prototype="math.add">
+                <port name="value2" type="float" value="177.0"/>
+            </node>
+            <node name="arc1" position="1.00,19.00" prototype="corevector.arc"/>
+            <node name="colorize1" position="0.00,22.00" prototype="corevector.colorize"/>
+            <node name="compound1" position="1.00,20.00" prototype="corevector.compound">
+                <port name="function" type="string" value="subtracted"/>
+            </node>
+            <node name="diametro" position="5.00,14.00" prototype="math.number">
+                <port name="value" type="float" value="249.0"/>
+            </node>
+            <node name="ellipse1" position="5.00,19.00" prototype="corevector.ellipse"/>
+            <node name="slice1" position="0.00,14.00" prototype="list.slice"/>
+            <node name="sum2" position="0.00,15.00" prototype="math.sum"/>
+            <port childReference="slice1.list" description="The input list." label="" name="list" range="list" type="list" widget="none"/>
+            <port childReference="arc1.degrees" description="The amount of degrees of the arc." label="" name="degrees" range="value" type="float" value="45.0" widget="float"/>
+            <port childReference="slice1.size" description="The amount of items to take from the list." label="" min="0.0" name="size" range="value" type="int" value="10" widget="int"/>
+            <port childReference="diametro.value" description="" label="" name="diametro" range="value" type="float" value="249.0" widget="float"/>
+            <port childReference="colorize1.fill" description="The new fill color. Set alpha to 0 for no fill." label="" name="fill" range="value" type="color" value="#000000ff" widget="color"/>
+            <port childReference="add1.value2" description="" label="" name="nEstacoes" range="value" type="float" value="177.0" widget="float"/>
+            <conn input="sum2.values" output="slice1"/>
+            <conn input="arc1.start_angle" output="sum2"/>
+            <conn input="compound1.shape2" output="ellipse1"/>
+            <conn input="compound1.shape1" output="arc1"/>
+            <conn input="colorize1.shape" output="compound1"/>
+            <conn input="add1.value1" output="diametro"/>
+            <conn input="arc1.width" output="add1"/>
+            <conn input="arc1.height" output="add1"/>
+            <conn input="ellipse1.width" output="diametro"/>
+            <conn input="ellipse1.height" output="diametro"/>
+        </node>
+        <node name="add1" position="12.00,18.00" prototype="math.add"/>
+        <node name="add2" position="16.00,18.00" prototype="math.add"/>
+        <node name="add3" position="19.00,21.00" prototype="math.add">
+            <port name="value2" type="float" value="90.0"/>
+        </node>
+        <node name="add4" position="16.00,20.00" prototype="math.add">
+            <port name="value2" type="float" value="16.0"/>
+        </node>
+        <node name="align1" position="27.00,18.00" prototype="corevector.align"/>
+        <node name="align2" position="19.00,17.00" prototype="corevector.align">
+            <port name="valign" type="string" value="bottom"/>
+        </node>
+        <node name="color1" position="-8.00,-3.00" prototype="color.color">
+            <port name="color" type="color" value="#0000ecff"/>
+        </node>
+        <node name="color2" position="-8.00,-2.00" prototype="color.color">
+            <port name="color" type="color" value="#09b220ff"/>
+        </node>
+        <node name="color3" position="-8.00,-1.00" prototype="color.color">
+            <port name="color" type="color" value="#f40000ff"/>
+        </node>
+        <node name="color4" position="-8.00,0.00" prototype="color.color">
+            <port name="color" type="color" value="#f3d100ff"/>
+        </node>
+        <node name="color5" position="-8.00,1.00" prototype="color.color">
+            <port name="color" type="color" value="#b600f4ff"/>
+        </node>
+        <node name="combine1" position="-8.00,2.00" prototype="list.combine"/>
+        <node name="combine2" position="8.00,26.00" prototype="list.combine"/>
+        <node name="convert_range1" position="4.00,9.00" prototype="math.convert_range">
+            <port name="target_end" type="float" value="360.0"/>
+        </node>
+        <node name="coordinates1" position="12.00,22.00" prototype="math.coordinates">
+            <port name="distance" type="float" value="287.0"/>
+        </node>
+        <node name="count1" position="5.00,11.00" prototype="list.count"/>
+        <node name="divide1" position="4.00,7.00" prototype="math.divide"/>
+        <node name="divide2" position="22.00,6.00" prototype="math.divide">
+            <port name="value2" type="float" value="10.0"/>
+        </node>
+        <node name="divide3" position="12.00,14.00" prototype="math.divide">
+            <port name="value2" type="float" value="2.0"/>
+        </node>
+        <node name="divide4" position="16.00,19.00" prototype="math.divide">
+            <port name="value2" type="float" value="2.0"/>
+        </node>
+        <node name="estacao" position="19.00,16.00" prototype="core.network" renderedChild="group1">
+            <node name="align1" position="12.00,8.00" prototype="corevector.align">
+                <port name="valign" type="string" value="bottom"/>
+            </node>
+            <node name="align2" position="16.00,8.00" prototype="corevector.align">
+                <port name="valign" type="string" value="bottom"/>
+            </node>
+            <node name="colorize1" position="12.00,12.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#00000000"/>
+                <port name="strokeWidth" type="float" value="4.0"/>
+            </node>
+            <node name="colorize2" position="15.00,12.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#00000000"/>
+            </node>
+            <node name="combine2" position="13.00,15.00" prototype="list.combine"/>
+            <node name="compound1" position="15.00,10.00" prototype="corevector.compound">
+                <port name="function" type="string" value="intersected"/>
+            </node>
+            <node name="duracao" position="12.00,4.00" prototype="math.number"/>
+            <node name="ellipse1" position="12.00,7.00" prototype="corevector.ellipse"/>
+            <node name="group1" position="13.00,16.00" prototype="corevector.group"/>
+            <node name="rect1" position="16.00,7.00" prototype="corevector.rect"/>
+            <port childReference="colorize1.stroke" description="The new stroke color." label="" name="stroke" range="value" type="color" value="#000000ff" widget="color"/>
+            <port childReference="rect1.height" description="The height of the rectangle." label="" name="height_2" range="value" type="float" value="100.0" widget="float"/>
+            <port childReference="colorize2.fill" description="The new fill color. Set alpha to 0 for no fill." label="" name="fill" range="value" type="color" value="#00000000" widget="color"/>
+            <port childReference="duracao.value" description="" label="" name="duracao" range="value" type="float" value="0.0" widget="float"/>
+            <conn input="align1.shape" output="ellipse1"/>
+            <conn input="compound1.shape1" output="align1"/>
+            <conn input="colorize1.shape" output="align1"/>
+            <conn input="align2.shape" output="rect1"/>
+            <conn input="compound1.shape2" output="align2"/>
+            <conn input="colorize2.shape" output="compound1"/>
+            <conn input="combine2.list1" output="colorize1"/>
+            <conn input="combine2.list2" output="colorize2"/>
+            <conn input="group1.shapes" output="combine2"/>
+            <conn input="ellipse1.width" output="duracao"/>
+            <conn input="ellipse1.height" output="duracao"/>
+            <conn input="rect1.width" output="duracao"/>
+        </node>
+        <node name="import_csv1" position="4.00,-2.00" prototype="data.import_csv">
+            <port name="file" type="string" value="Metro-DadosTratados.csv"/>
+            <port name="delimiter" type="string" value="semicolon"/>
+            <port name="number_separator" type="string" value="comma"/>
+        </node>
+        <node name="integer1" position="-3.00,9.00" prototype="math.integer"/>
+        <node name="integer2" position="-4.00,5.00" prototype="math.integer"/>
+        <node name="lookup2" position="-4.00,12.00" prototype="data.lookup"/>
+        <node name="lookup3" position="-3.00,8.00" prototype="data.lookup">
+            <port name="key" type="string" value="Linha"/>
+        </node>
+        <node name="mul" position="16.00,5.00" prototype="math.multiply">
+            <port name="value2" type="float" value="2.0"/>
+        </node>
+        <node comment="Porcentagem" name="multiply1" position="4.00,8.00" prototype="math.multiply">
+            <port name="value2" type="float" value="100.0"/>
+        </node>
+        <node name="multiply2" position="8.00,5.00" prototype="math.multiply">
+            <port name="value2" type="float" value="10.0"/>
+        </node>
+        <node name="multiply3" position="12.00,5.00" prototype="math.multiply">
+            <port name="value2" type="float" value="10.0"/>
+        </node>
+        <node name="multiply4" position="22.00,7.00" prototype="math.multiply"/>
+        <node name="number1" position="4.00,5.00" prototype="math.number"/>
+        <node name="range1" position="5.00,12.00" prototype="math.range"/>
+        <node name="rotate1" position="19.00,22.00" prototype="corevector.rotate"/>
+        <node name="running_total1" position="12.00,16.00" prototype="math.running_total"/>
+        <node name="slice1" position="4.00,-1.00" prototype="list.slice">
+            <port name="size" type="int" value="5"/>
+        </node>
+        <node name="sort1" position="4.00,0.00" prototype="list.sort">
+            <port name="key" type="string" value="Ano"/>
+        </node>
+        <node name="stack1" position="27.00,19.00" prototype="corevector.stack">
+            <port name="margin" type="float" value="16.0"/>
+        </node>
+        <node name="sum1" position="5.00,6.00" prototype="math.sum"/>
+        <node name="translate1" position="12.00,24.00" prototype="corevector.translate"/>
+        <node name="zip_map1" position="-4.00,7.00" prototype="list.zip_map"/>
+        <conn input="QtdTransportadoDiaMilhares.list" output="sort1"/>
+        <conn input="number1.value" output="QtdTransportadoDiaMilhares"/>
+        <conn input="sum1.values" output="number1"/>
+        <conn input="divide1.value1" output="number1"/>
+        <conn input="divide1.value2" output="sum1"/>
+        <conn input="multiply1.value1" output="divide1"/>
+        <conn input="convert_range1.value" output="multiply1"/>
+        <conn input="count1.list" output="QtdTransportadoDiaMilhares"/>
+        <conn input="range1.end" output="count1"/>
+        <conn input="Torta.list" output="convert_range1"/>
+        <conn input="Torta.degrees" output="convert_range1"/>
+        <conn input="Torta.size" output="range1"/>
+        <conn input="slice1.list" output="import_csv1"/>
+        <conn input="sort1.list" output="slice1"/>
+        <conn input="CompKm.list" output="sort1"/>
+        <conn input="combine1.list1" output="color1"/>
+        <conn input="combine1.list2" output="color2"/>
+        <conn input="combine1.list3" output="color3"/>
+        <conn input="combine1.list4" output="color4"/>
+        <conn input="combine1.list5" output="color5"/>
+        <conn input="zip_map1.values" output="combine1"/>
+        <conn input="lookup2.list" output="zip_map1"/>
+        <conn input="lookup3.list" output="sort1"/>
+        <conn input="integer1.value" output="lookup3"/>
+        <conn input="lookup2.key" output="integer1"/>
+        <conn input="zip_map1.keys" output="integer2"/>
+        <conn input="Torta.fill" output="lookup2"/>
+        <conn input="Estacoes.list" output="sort1"/>
+        <conn input="multiply3.value1" output="Estacoes"/>
+        <conn input="multiply2.value1" output="CompKm"/>
+        <conn input="Torta.diametro" output="multiply2"/>
+        <conn input="divide2.value1" output="mul"/>
+        <conn input="DuracaoDasViagensMin.list" output="sort1"/>
+        <conn input="mul.value1" output="DuracaoDasViagensMin"/>
+        <conn input="DuracaoDasViagensMin1.list" output="sort1"/>
+        <conn input="multiply4.value1" output="DuracaoDasViagensMin1"/>
+        <conn input="multiply4.value2" output="divide2"/>
+        <conn input="estacao.stroke" output="lookup2"/>
+        <conn input="estacao.height_2" output="multiply4"/>
+        <conn input="estacao.fill" output="lookup2"/>
+        <conn input="estacao.duracao" output="mul"/>
+        <conn input="combine2.list1" output="Torta"/>
+        <conn input="align1.shape" output="estacao"/>
+        <conn input="stack1.shapes" output="align1"/>
+        <conn input="coordinates1.angle" output="add1"/>
+        <conn input="add1.value2" output="divide3"/>
+        <conn input="add1.value1" output="running_total1"/>
+        <conn input="divide3.value1" output="convert_range1"/>
+        <conn input="running_total1.values" output="convert_range1"/>
+        <conn input="translate1.translate" output="coordinates1"/>
+        <conn input="combine2.list2" output="translate1"/>
+        <conn input="align2.shape" output="estacao"/>
+        <conn input="rotate1.shape" output="align2"/>
+        <conn input="rotate1.angle" output="add3"/>
+        <conn input="add3.value1" output="add1"/>
+        <conn input="add2.value2" output="multiply3"/>
+        <conn input="Torta.nEstacoes" output="multiply3"/>
+        <conn input="add2.value1" output="multiply2"/>
+        <conn input="divide4.value1" output="add2"/>
+        <conn input="add4.value1" output="divide4"/>
+        <conn input="coordinates1.distance" output="add4"/>
+        <conn input="translate1.shape" output="rotate1"/>
+        <conn input="Linha.list" output="slice1"/>
+        <conn input="integer2.value" output="Linha"/>
+    </node>
+</ndbx>

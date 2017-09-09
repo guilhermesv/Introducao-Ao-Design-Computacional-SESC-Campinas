@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="597f4975-3b85-4a11-ad5f-2e535c51e46b">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="colorize1" position="-8.00,17.00" prototype="corevector.colorize"/>
+        <node name="colorize2" position="-11.00,17.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#e5e5e5ff"/>
+        </node>
+        <node name="combine1" position="-9.00,21.00" prototype="list.combine"/>
+        <node name="convert_range1" position="13.00,6.00" prototype="math.convert_range">
+            <port name="source_end" type="float" value="300.0"/>
+            <port name="target_start" type="float" value="5.0"/>
+            <port name="target_end" type="float" value="84.0"/>
+        </node>
+        <node name="convert_range2" position="-6.00,6.00" prototype="math.convert_range">
+            <port name="source_end" type="float" value="300.0"/>
+            <port name="target_start" type="float" value="5.0"/>
+            <port name="target_end" type="float" value="84.0"/>
+        </node>
+        <node name="coordinates1" position="14.00,3.00" prototype="math.coordinates">
+            <port name="angle" type="float" value="359.0"/>
+        </node>
+        <node name="coordinates2" position="-5.00,3.00" prototype="math.coordinates">
+            <port name="angle" type="float" value="359.0"/>
+        </node>
+        <node name="count1" position="1.00,7.00" prototype="list.count"/>
+        <node name="distance1" position="13.00,5.00" prototype="math.distance">
+            <port name="point2" type="point" value="0.00,0.00"/>
+        </node>
+        <node name="distance2" position="-6.00,5.00" prototype="math.distance">
+            <port name="point2" type="point" value="0.00,0.00"/>
+        </node>
+        <node name="divide1" position="15.00,0.00" prototype="math.divide">
+            <port name="value2" type="float" value="0.25"/>
+        </node>
+        <node name="divide2" position="-4.00,0.00" prototype="math.divide">
+            <port name="value2" type="float" value="0.25"/>
+        </node>
+        <node name="divide3" position="1.00,8.00" prototype="math.divide">
+            <port name="value1" type="float" value="255.0"/>
+        </node>
+        <node name="ellipse1" position="11.00,8.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="ellipse2" position="-8.00,8.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="10.0"/>
+            <port name="height" type="float" value="10.0"/>
+        </node>
+        <node name="fit1" position="-8.00,19.00" prototype="corevector.fit">
+            <port name="width" type="float" value="800.0"/>
+            <port name="height" type="float" value="800.0"/>
+        </node>
+        <node name="frame1" position="18.00,-2.00" prototype="core.frame"/>
+        <node name="frame2" position="-1.00,-2.00" prototype="core.frame"/>
+        <node name="grid1" position="10.00,2.00" prototype="corevector.grid"/>
+        <node name="grid2" position="-9.00,2.00" prototype="corevector.grid"/>
+        <node name="group1" position="-8.00,18.00" prototype="corevector.group"/>
+        <node name="hsb_color1" position="0.00,12.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="150.0"/>
+            <port name="brightness" type="float" value="255.0"/>
+        </node>
+        <node name="range1" position="1.00,10.00" prototype="math.range">
+            <port name="end" type="float" value="255.0"/>
+        </node>
+        <node name="rect1" position="-11.00,15.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="sort1" position="-7.00,13.00" prototype="corevector.sort">
+            <port name="order_by" type="string" value="distance"/>
+        </node>
+        <node name="translate1" position="10.00,10.00" prototype="corevector.translate"/>
+        <node name="translate2" position="-9.00,11.00" prototype="corevector.translate"/>
+        <node name="wave1" position="21.00,1.00" prototype="math.wave">
+            <port name="min" type="float" value="40.0"/>
+            <port name="period" type="float" value="1444.0"/>
+        </node>
+        <conn input="distance1.point1" output="grid1"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="translate1.shape" output="ellipse1"/>
+        <conn input="distance1.point2" output="coordinates1"/>
+        <conn input="convert_range1.value" output="distance1"/>
+        <conn input="ellipse1.width" output="convert_range1"/>
+        <conn input="ellipse1.height" output="convert_range1"/>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="coordinates1.angle" output="divide1"/>
+        <conn input="convert_range1.target_end" output="wave1"/>
+        <conn input="wave1.offset" output="frame1"/>
+        <conn input="distance2.point1" output="grid2"/>
+        <conn input="translate2.translate" output="grid2"/>
+        <conn input="translate2.shape" output="ellipse2"/>
+        <conn input="distance2.point2" output="coordinates2"/>
+        <conn input="convert_range2.value" output="distance2"/>
+        <conn input="ellipse2.width" output="convert_range2"/>
+        <conn input="ellipse2.height" output="convert_range2"/>
+        <conn input="divide2.value1" output="frame2"/>
+        <conn input="coordinates2.angle" output="divide2"/>
+        <conn input="sort1.position" output="coordinates2"/>
+        <conn input="sort1.shapes" output="translate2"/>
+        <conn input="colorize1.shape" output="sort1"/>
+        <conn input="count1.list" output="grid2"/>
+        <conn input="divide3.value2" output="count1"/>
+        <conn input="range1.step" output="divide3"/>
+        <conn input="hsb_color1.hue" output="range1"/>
+        <conn input="colorize1.fill" output="hsb_color1"/>
+        <conn input="combine1.list1" output="colorize2"/>
+        <conn input="colorize2.shape" output="rect1"/>
+        <conn input="group1.shapes" output="colorize1"/>
+        <conn input="fit1.shape" output="group1"/>
+        <conn input="combine1.list2" output="fit1"/>
+    </node>
+</ndbx>

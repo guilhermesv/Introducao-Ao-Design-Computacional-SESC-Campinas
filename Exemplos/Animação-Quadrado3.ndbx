@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="f5eb0be3-e8c9-4355-845c-f7402955d7b7">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="network1">
+        <node name="add2" position="22.00,10.00" prototype="math.add"/>
+        <node name="color3" position="22.00,3.00" prototype="color.color">
+            <port name="color" type="color" value="#ff0000ff"/>
+        </node>
+        <node name="color4" position="22.00,4.00" prototype="color.color"/>
+        <node name="colorize2" position="18.00,7.00" prototype="corevector.colorize"/>
+        <node name="combine2" position="22.00,5.00" prototype="list.combine"/>
+        <node name="copy2" position="18.00,5.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="10"/>
+            <port name="scale" type="point" value="90.00,90.00"/>
+        </node>
+        <node name="count2" position="22.00,7.00" prototype="list.count"/>
+        <node name="divide1" position="13.00,8.00" prototype="math.divide">
+            <port name="value2" type="float" value="2.0"/>
+        </node>
+        <node name="divide2" position="28.00,8.00" prototype="math.divide">
+            <port name="value2" type="float" value="2.0"/>
+        </node>
+        <node name="frame1" position="13.00,7.00" prototype="core.frame"/>
+        <node name="frame2" position="28.00,7.00" prototype="core.frame"/>
+        <node name="network1" position="4.00,13.00" prototype="core.network" renderedChild="group1">
+            <node name="add1" position="3.00,8.00" prototype="math.add"/>
+            <node name="color1" position="3.00,1.00" prototype="color.color">
+                <port name="color" type="color" value="#ff0000ff"/>
+            </node>
+            <node name="color2" position="3.00,2.00" prototype="color.color"/>
+            <node name="colorize1" position="-1.00,5.00" prototype="corevector.colorize"/>
+            <node name="combine1" position="3.00,3.00" prototype="list.combine"/>
+            <node name="copy1" position="-1.00,3.00" prototype="corevector.copy">
+                <port name="copies" type="int" value="10"/>
+                <port name="scale" type="point" value="90.00,90.00"/>
+            </node>
+            <node name="count1" position="3.00,5.00" prototype="list.count"/>
+            <node name="group1" position="-1.00,12.00" prototype="corevector.group"/>
+            <node name="range1" position="3.00,6.00" prototype="math.range"/>
+            <node name="rect1" position="-1.00,1.00" prototype="corevector.rect">
+                <port name="width" type="float" value="300.0"/>
+                <port name="height" type="float" value="300.0"/>
+                <port name="roundness" type="point" value="30.00,30.00"/>
+            </node>
+            <node name="rotate1" position="-1.00,11.00" prototype="corevector.rotate"/>
+            <node name="wave1" position="3.00,10.00" prototype="math.wave"/>
+            <port childReference="add1.value2" description="" label="" name="value2" range="value" type="float" value="0.0" widget="float"/>
+            <conn input="copy1.shape" output="rect1"/>
+            <conn input="colorize1.shape" output="copy1"/>
+            <conn input="combine1.list1" output="color1"/>
+            <conn input="combine1.list2" output="color2"/>
+            <conn input="colorize1.fill" output="combine1"/>
+            <conn input="count1.list" output="colorize1"/>
+            <conn input="rotate1.shape" output="colorize1"/>
+            <conn input="wave1.offset" output="add1"/>
+            <conn input="rotate1.angle" output="wave1"/>
+            <conn input="range1.end" output="count1"/>
+            <conn input="add1.value1" output="range1"/>
+            <conn input="group1.shapes" output="rotate1"/>
+        </node>
+        <node name="range2" position="22.00,8.00" prototype="math.range"/>
+        <node name="rect2" position="18.00,3.00" prototype="corevector.rect">
+            <port name="width" type="float" value="300.0"/>
+            <port name="height" type="float" value="50.0"/>
+            <port name="roundness" type="point" value="30.00,30.00"/>
+        </node>
+        <node name="rotate2" position="18.00,13.00" prototype="corevector.rotate"/>
+        <node name="wave2" position="22.00,12.00" prototype="math.wave">
+            <port name="max" type="float" value="180.0"/>
+        </node>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="copy2.shape" output="rect2"/>
+        <conn input="colorize2.shape" output="copy2"/>
+        <conn input="combine2.list1" output="color3"/>
+        <conn input="combine2.list2" output="color4"/>
+        <conn input="colorize2.fill" output="combine2"/>
+        <conn input="count2.list" output="colorize2"/>
+        <conn input="rotate2.shape" output="colorize2"/>
+        <conn input="wave2.offset" output="add2"/>
+        <conn input="rotate2.angle" output="wave2"/>
+        <conn input="range2.end" output="count2"/>
+        <conn input="add2.value1" output="range2"/>
+        <conn input="divide2.value1" output="frame2"/>
+        <conn input="add2.value2" output="divide2"/>
+        <conn input="network1.value2" output="divide1"/>
+    </node>
+</ndbx>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="2ae5fc55-1489-4c51-9175-e18528a0e5b2">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate1">
+        <node name="colorize1" position="5.00,6.00" prototype="corevector.colorize"/>
+        <node name="grid1" position="10.00,7.00" prototype="corevector.grid"/>
+        <node name="import_svg1" position="3.00,1.00" prototype="corevector.import_svg">
+            <port name="file" type="string" value="paleta.svg"/>
+        </node>
+        <node name="lookup1" position="3.00,4.00" prototype="data.lookup">
+            <port name="key" type="string" value="fill"/>
+        </node>
+        <node name="number1" position="7.00,0.00" prototype="math.number">
+            <port name="value" type="float" value="154.0"/>
+        </node>
+        <node name="number2" position="10.00,5.00" prototype="math.number">
+            <port name="value" type="float" value="5.0"/>
+        </node>
+        <node name="rect1" position="7.00,2.00" prototype="corevector.rect"/>
+        <node name="translate1" position="4.00,9.00" prototype="corevector.translate"/>
+        <node name="ungroup1" position="3.00,2.00" prototype="corevector.ungroup"/>
+        <conn input="colorize1.fill" output="lookup1"/>
+        <conn input="ungroup1.shape" output="import_svg1"/>
+        <conn input="lookup1.list" output="ungroup1"/>
+        <conn input="colorize1.shape" output="rect1"/>
+        <conn input="translate1.shape" output="colorize1"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="rect1.width" output="number1"/>
+        <conn input="rect1.height" output="number1"/>
+        <conn input="grid1.columns" output="number2"/>
+        <conn input="grid1.rows" output="number2"/>
+    </node>
+</ndbx>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="7eadd9ac-b0d6-46b1-bdda-64faf20e5d69">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="switch1">
+        <node name="compare1" position="9.00,8.00" prototype="math.compare">
+            <port name="value2" type="float" value="179.0"/>
+            <port name="comparator" type="string" value="=="/>
+        </node>
+        <node name="ellipse1" position="2.00,5.00" prototype="corevector.ellipse"/>
+        <node name="first1" position="3.00,3.00" prototype="list.first"/>
+        <node name="first2" position="7.00,3.00" prototype="list.first"/>
+        <node name="frame1" position="6.00,-2.00" prototype="core.frame"/>
+        <node name="make_point1" position="18.00,6.00" prototype="corevector.make_point"/>
+        <node name="number1" position="15.00,2.00" prototype="math.number"/>
+        <node name="number2" position="18.00,2.00" prototype="math.number">
+            <port name="value" type="float" value="-200.0"/>
+        </node>
+        <node name="range1" position="3.00,1.00" prototype="math.range">
+            <port name="end" type="float" value="180.0"/>
+        </node>
+        <node name="range2" position="7.00,1.00" prototype="math.range">
+            <port name="end" type="float" value="-180.0"/>
+            <port name="step" type="float" value="-1.0"/>
+        </node>
+        <node name="repeat1" position="15.00,3.00" prototype="list.repeat"/>
+        <node name="repeat2" position="18.00,3.00" prototype="list.repeat"/>
+        <node name="rotate1" position="2.00,7.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="180.0"/>
+            <port name="origin" type="point" value="-100.00,0.00"/>
+        </node>
+        <node name="rotate2" position="6.00,8.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="-180.0"/>
+            <port name="origin" type="point" value="-300.00,0.00"/>
+        </node>
+        <node name="shift1" position="19.00,4.00" prototype="list.shift"/>
+        <node name="shift2" position="3.00,2.00" prototype="list.shift"/>
+        <node name="shift3" position="7.00,2.00" prototype="list.shift"/>
+        <node name="switch1" position="2.00,11.00" prototype="list.switch"/>
+        <node name="translate1" position="6.00,7.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-200.00,0.00"/>
+        </node>
+        <conn input="rotate1.shape" output="ellipse1"/>
+        <conn input="repeat1.list" output="number1"/>
+        <conn input="repeat2.list" output="number2"/>
+        <conn input="make_point1.x" output="repeat2"/>
+        <conn input="translate1.shape" output="ellipse1"/>
+        <conn input="rotate2.shape" output="translate1"/>
+        <conn input="shift2.list" output="range1"/>
+        <conn input="first1.list" output="shift2"/>
+        <conn input="shift3.list" output="range2"/>
+        <conn input="first2.list" output="shift3"/>
+        <conn input="shift2.amount" output="frame1"/>
+        <conn input="shift3.amount" output="frame1"/>
+        <conn input="rotate2.angle" output="first2"/>
+        <conn input="rotate1.angle" output="first1"/>
+        <conn input="switch1.input1" output="rotate1"/>
+        <conn input="switch1.input2" output="rotate2"/>
+        <conn input="compare1.value1" output="first1"/>
+        <conn input="switch1.index" output="compare1"/>
+    </node>
+</ndbx>

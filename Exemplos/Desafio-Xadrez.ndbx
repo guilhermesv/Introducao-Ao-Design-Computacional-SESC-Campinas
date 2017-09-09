@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="df271f6d-0114-4fa0-945d-48a50719bb22">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate5">
+        <node name="add1" position="28.00,5.00" prototype="math.add">
+            <port name="value2" type="float" value="1.0"/>
+        </node>
+        <node name="color1" position="10.00,-2.00" prototype="color.color">
+            <port name="color" type="color" value="#e7bcbcff"/>
+        </node>
+        <node name="color2" position="11.00,-1.00" prototype="color.color">
+            <port name="color" type="color" value="#585858ff"/>
+        </node>
+        <node name="color3" position="22.00,8.00" prototype="color.color">
+            <port name="color" type="color" value="#e7bcbcff"/>
+        </node>
+        <node name="color4" position="22.00,9.00" prototype="color.color">
+            <port name="color" type="color" value="#585858ff"/>
+        </node>
+        <node name="color7" position="39.00,8.00" prototype="color.color">
+            <port name="color" type="color" value="#e7bcbcff"/>
+        </node>
+        <node name="color8" position="39.00,9.00" prototype="color.color">
+            <port name="color" type="color" value="#585858ff"/>
+        </node>
+        <node name="colorize2" position="0.00,5.00" prototype="corevector.colorize"/>
+        <node name="colorize3" position="4.00,5.00" prototype="corevector.colorize"/>
+        <node name="colorize4" position="21.00,12.00" prototype="corevector.colorize"/>
+        <node name="colorize5" position="38.00,15.00" prototype="corevector.colorize"/>
+        <node name="combine1" position="10.00,1.00" prototype="list.combine"/>
+        <node name="combine2" position="0.00,9.00" prototype="list.combine"/>
+        <node name="count1" position="27.00,3.00" prototype="list.count"/>
+        <node name="count2" position="48.00,1.00" prototype="list.count"/>
+        <node name="count3" position="43.00,1.00" prototype="list.count"/>
+        <node name="grid1" position="1.00,2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="8"/>
+            <port name="rows" type="int" value="1"/>
+            <port name="width" type="float" value="700.0"/>
+            <port name="height" type="float" value="0.0"/>
+        </node>
+        <node name="grid2" position="5.00,2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="8"/>
+            <port name="rows" type="int" value="1"/>
+            <port name="width" type="float" value="700.0"/>
+            <port name="height" type="float" value="0.0"/>
+        </node>
+        <node name="grid3" position="3.00,9.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="1"/>
+            <port name="rows" type="int" value="8"/>
+            <port name="width" type="float" value="0.0"/>
+            <port name="height" type="float" value="700.0"/>
+        </node>
+        <node name="grid4" position="24.00,-1.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="2"/>
+            <port name="rows" type="int" value="2"/>
+            <port name="width" type="float" value="100.0"/>
+            <port name="height" type="float" value="100.0"/>
+        </node>
+        <node name="grid5" position="43.00,-1.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="4"/>
+            <port name="rows" type="int" value="4"/>
+        </node>
+        <node name="grid6" position="48.00,-1.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="1"/>
+            <port name="rows" type="int" value="4"/>
+            <port name="width" type="float" value="0.0"/>
+        </node>
+        <node name="group1" position="0.00,7.00" prototype="corevector.group"/>
+        <node name="group2" position="4.00,7.00" prototype="corevector.group"/>
+        <node name="logical1" position="45.00,8.00" prototype="math.logical">
+            <port name="comparator" type="string" value="xor"/>
+        </node>
+        <node name="multiply1" position="28.00,8.00" prototype="math.multiply"/>
+        <node name="multiply2" position="48.00,-4.00" prototype="math.multiply">
+            <port name="value2" type="float" value="100.0"/>
+        </node>
+        <node name="number1" position="46.00,-6.00" prototype="math.number">
+            <port name="value" type="float" value="6.0"/>
+        </node>
+        <node name="odd1" position="28.00,7.00" prototype="math.odd"/>
+        <node name="odd2" position="48.00,4.00" prototype="math.odd"/>
+        <node name="odd3" position="43.00,4.00" prototype="math.odd"/>
+        <node name="range1" position="28.00,6.00" prototype="math.range">
+            <port name="start" type="float" value="1.0"/>
+        </node>
+        <node name="range2" position="48.00,3.00" prototype="math.range"/>
+        <node name="range3" position="43.00,3.00" prototype="math.range"/>
+        <node name="rect1" position="0.00,1.00" prototype="corevector.rect"/>
+        <node name="rect2" prototype="corevector.rect"/>
+        <node name="rect3" position="21.00,-1.00" prototype="corevector.rect"/>
+        <node name="rect4" position="38.00,4.00" prototype="corevector.rect"/>
+        <node name="repeat1" position="48.00,5.00" prototype="list.repeat">
+            <port name="amount" type="int" value="4"/>
+            <port name="per_item" type="boolean" value="true"/>
+        </node>
+        <node name="reverse1" position="13.00,2.00" prototype="list.reverse"/>
+        <node name="subtract1" position="48.00,-3.00" prototype="math.subtract">
+            <port name="value2" type="float" value="100.0"/>
+        </node>
+        <node name="switch1" position="22.00,10.00" prototype="list.switch"/>
+        <node name="switch3" position="39.00,11.00" prototype="list.switch"/>
+        <node name="translate1" position="0.00,6.00" prototype="corevector.translate"/>
+        <node name="translate2" position="4.00,6.00" prototype="corevector.translate"/>
+        <node name="translate3" position="0.00,12.00" prototype="corevector.translate"/>
+        <node name="translate4" position="21.00,13.00" prototype="corevector.translate"/>
+        <node name="translate5" position="38.00,16.00" prototype="corevector.translate"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="combine1.list1" output="color1"/>
+        <conn input="combine1.list2" output="color2"/>
+        <conn input="colorize2.fill" output="combine1"/>
+        <conn input="colorize2.shape" output="rect1"/>
+        <conn input="translate1.shape" output="colorize2"/>
+        <conn input="reverse1.list" output="combine1"/>
+        <conn input="translate2.translate" output="grid2"/>
+        <conn input="colorize3.shape" output="rect2"/>
+        <conn input="translate2.shape" output="colorize3"/>
+        <conn input="colorize3.fill" output="reverse1"/>
+        <conn input="group1.shapes" output="translate1"/>
+        <conn input="group2.shapes" output="translate2"/>
+        <conn input="combine2.list1" output="group1"/>
+        <conn input="combine2.list2" output="group2"/>
+        <conn input="translate3.shape" output="combine2"/>
+        <conn input="translate3.translate" output="grid3"/>
+        <conn input="count1.list" output="grid4"/>
+        <conn input="odd1.value" output="range1"/>
+        <conn input="colorize4.shape" output="rect3"/>
+        <conn input="multiply1.value1" output="odd1"/>
+        <conn input="switch1.input1" output="color3"/>
+        <conn input="switch1.input2" output="color4"/>
+        <conn input="colorize4.fill" output="switch1"/>
+        <conn input="translate4.translate" output="grid4"/>
+        <conn input="translate4.shape" output="colorize4"/>
+        <conn input="add1.value1" output="count1"/>
+        <conn input="range1.end" output="add1"/>
+        <conn input="switch1.index" output="multiply1"/>
+        <conn input="colorize5.shape" output="rect4"/>
+        <conn input="translate5.translate" output="grid5"/>
+        <conn input="translate5.shape" output="colorize5"/>
+        <conn input="count2.list" output="grid6"/>
+        <conn input="odd2.value" output="range2"/>
+        <conn input="count3.list" output="grid5"/>
+        <conn input="odd3.value" output="range3"/>
+        <conn input="range2.end" output="count2"/>
+        <conn input="range3.end" output="count3"/>
+        <conn input="colorize5.fill" output="switch3"/>
+        <conn input="repeat1.list" output="odd2"/>
+        <conn input="logical1.boolean1" output="odd3"/>
+        <conn input="logical1.boolean2" output="repeat1"/>
+        <conn input="switch3.index" output="logical1"/>
+        <conn input="switch3.input1" output="color7"/>
+        <conn input="switch3.input2" output="color8"/>
+        <conn input="grid5.columns" output="number1"/>
+        <conn input="grid5.rows" output="number1"/>
+        <conn input="grid6.rows" output="number1"/>
+        <conn input="repeat1.amount" output="number1"/>
+        <conn input="multiply2.value1" output="number1"/>
+        <conn input="subtract1.value1" output="multiply2"/>
+        <conn input="grid5.width" output="subtract1"/>
+        <conn input="grid5.height" output="subtract1"/>
+    </node>
+</ndbx>

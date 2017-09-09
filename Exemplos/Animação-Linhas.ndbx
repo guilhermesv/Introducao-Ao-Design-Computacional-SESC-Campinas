@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="faa95a40-5914-4284-834e-c6cfc9943fbd">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate3">
+        <node name="divide1" position="11.00,0.00" prototype="math.divide">
+            <port name="value2" type="float" value="3.0"/>
+        </node>
+        <node name="divide2" position="22.00,0.00" prototype="math.divide">
+            <port name="value2" type="float" value="3.0"/>
+        </node>
+        <node name="frame1" position="12.00,-3.00" prototype="core.frame"/>
+        <node name="frame2" position="23.00,-3.00" prototype="core.frame"/>
+        <node name="grid1" position="11.00,3.00" prototype="corevector.grid"/>
+        <node name="grid2" position="22.00,3.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="11"/>
+            <port name="rows" type="int" value="11"/>
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="network1" position="6.00,3.00" prototype="core.network" renderedChild="group1">
+            <node name="add1" position="2.00,1.00" prototype="math.add">
+                <port name="value2" type="float" value="90.0"/>
+            </node>
+            <node name="combine1" position="-1.00,5.00" prototype="list.combine"/>
+            <node name="group1" position="-1.00,6.00" prototype="corevector.group"/>
+            <node name="rect1" position="-2.00,-2.00" prototype="corevector.rect">
+                <port name="height" type="float" value="10.0"/>
+            </node>
+            <node name="rect2" position="1.00,-2.00" prototype="corevector.rect">
+                <port name="height" type="float" value="10.0"/>
+            </node>
+            <node name="rotate1" position="-2.00,2.00" prototype="corevector.rotate"/>
+            <node name="rotate2" position="1.00,2.00" prototype="corevector.rotate"/>
+            <node name="translate1" position="1.00,3.00" prototype="corevector.translate">
+                <port name="translate" type="point" value="100.00,0.00"/>
+            </node>
+            <node name="wave1" position="-1.00,0.00" prototype="math.wave">
+                <port name="max" type="float" value="90.0"/>
+                <port name="period" type="float" value="100.0"/>
+            </node>
+            <node name="wave2" position="2.00,0.00" prototype="math.wave">
+                <port name="max" type="float" value="90.0"/>
+                <port name="period" type="float" value="100.0"/>
+            </node>
+            <port childReference="wave1.offset" description="" label="" name="offset_1" range="value" type="float" value="0.0" widget="float"/>
+            <port childReference="wave2.offset" description="" label="" name="offset_2" range="value" type="float" value="0.0" widget="float"/>
+            <conn input="rotate1.shape" output="rect1"/>
+            <conn input="rotate2.shape" output="rect2"/>
+            <conn input="translate1.shape" output="rotate2"/>
+            <conn input="combine1.list1" output="rotate1"/>
+            <conn input="combine1.list2" output="translate1"/>
+            <conn input="rotate1.angle" output="wave1"/>
+            <conn input="add1.value1" output="wave2"/>
+            <conn input="rotate2.angle" output="add1"/>
+            <conn input="group1.shapes" output="combine1"/>
+        </node>
+        <node name="network2" position="17.00,3.00" prototype="core.network" renderedChild="group1">
+            <node name="add1" position="2.00,1.00" prototype="math.add">
+                <port name="value2" type="float" value="90.0"/>
+            </node>
+            <node name="combine1" position="-1.00,5.00" prototype="list.combine"/>
+            <node name="group1" position="-1.00,6.00" prototype="corevector.group"/>
+            <node name="rect1" position="-2.00,-2.00" prototype="corevector.rect">
+                <port name="height" type="float" value="10.0"/>
+            </node>
+            <node name="rect2" position="1.00,-2.00" prototype="corevector.rect">
+                <port name="height" type="float" value="10.0"/>
+            </node>
+            <node name="rotate1" position="-2.00,2.00" prototype="corevector.rotate"/>
+            <node name="rotate2" position="1.00,2.00" prototype="corevector.rotate"/>
+            <node name="translate1" position="1.00,3.00" prototype="corevector.translate">
+                <port name="translate" type="point" value="100.00,0.00"/>
+            </node>
+            <node name="wave1" position="-1.00,0.00" prototype="math.wave">
+                <port name="max" type="float" value="90.0"/>
+                <port name="period" type="float" value="100.0"/>
+            </node>
+            <node name="wave2" position="2.00,0.00" prototype="math.wave">
+                <port name="max" type="float" value="90.0"/>
+                <port name="period" type="float" value="100.0"/>
+            </node>
+            <port childReference="wave1.offset" description="" label="" name="offset_1" range="value" type="float" value="0.0" widget="float"/>
+            <port childReference="wave2.offset" description="" label="" name="offset_2" range="value" type="float" value="0.0" widget="float"/>
+            <conn input="rotate1.shape" output="rect1"/>
+            <conn input="rotate2.shape" output="rect2"/>
+            <conn input="translate1.shape" output="rotate2"/>
+            <conn input="combine1.list1" output="rotate1"/>
+            <conn input="combine1.list2" output="translate1"/>
+            <conn input="rotate1.angle" output="wave1"/>
+            <conn input="add1.value1" output="wave2"/>
+            <conn input="rotate2.angle" output="add1"/>
+            <conn input="group1.shapes" output="combine1"/>
+        </node>
+        <node name="translate2" position="8.00,8.00" prototype="corevector.translate"/>
+        <node name="translate3" position="19.00,8.00" prototype="corevector.translate"/>
+        <conn input="translate2.translate" output="grid1"/>
+        <conn input="translate2.shape" output="network1"/>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="network1.offset_1" output="divide1"/>
+        <conn input="network1.offset_2" output="divide1"/>
+        <conn input="translate3.translate" output="grid2"/>
+        <conn input="translate3.shape" output="network2"/>
+        <conn input="divide2.value1" output="frame2"/>
+        <conn input="network2.offset_1" output="divide2"/>
+        <conn input="network2.offset_2" output="divide2"/>
+    </node>
+</ndbx>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="139f27fa-d948-4b05-846d-d0734fcc7757">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="colorize1" position="7.00,13.00" prototype="corevector.colorize"/>
+        <node name="combine1" position="8.00,18.00" prototype="list.combine"/>
+        <node name="coordinates1" position="8.00,8.00" prototype="math.coordinates">
+            <port name="angle" type="float" value="871.0"/>
+            <port name="distance" type="float" value="26.0"/>
+        </node>
+        <node name="copy1" position="7.00,12.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="14"/>
+            <port name="translate" type="point" value="-2.00,-4.00"/>
+            <port name="scale" type="point" value="105.00,105.00"/>
+        </node>
+        <node name="divide1" position="13.00,10.00" prototype="math.divide">
+            <port name="value1" type="float" value="255.0"/>
+        </node>
+        <node name="divide2" position="9.00,6.00" prototype="math.divide">
+            <port name="value2" type="float" value="0.5"/>
+        </node>
+        <node name="ellipse1" position="3.00,5.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="30.0"/>
+            <port name="height" type="float" value="30.0"/>
+        </node>
+        <node name="frame1" position="9.00,4.00" prototype="core.frame"/>
+        <node name="grid1" position="3.00,4.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="5"/>
+            <port name="rows" type="int" value="5"/>
+            <port name="width" type="float" value="150.0"/>
+            <port name="height" type="float" value="150.0"/>
+        </node>
+        <node name="group1" position="3.00,9.00" prototype="corevector.group"/>
+        <node name="hsb_color1" position="12.00,14.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="122.0"/>
+            <port name="brightness" type="float" value="286.0"/>
+        </node>
+        <node name="mod1" position="17.00,10.00" prototype="math.mod">
+            <port name="value2" type="float" value="360.0"/>
+        </node>
+        <node name="number1" position="13.00,7.00" prototype="math.number">
+            <port name="value" type="float" value="14.0"/>
+        </node>
+        <node name="range1" position="13.00,12.00" prototype="math.range">
+            <port name="end" type="float" value="255.0"/>
+        </node>
+        <node name="rect1" position="5.00,16.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <conn input="ellipse1.position" output="grid1"/>
+        <conn input="copy1.shape" output="group1"/>
+        <conn input="copy1.translate" output="coordinates1"/>
+        <conn input="group1.shapes" output="ellipse1"/>
+        <conn input="colorize1.shape" output="copy1"/>
+        <conn input="colorize1.fill" output="hsb_color1"/>
+        <conn input="copy1.copies" output="number1"/>
+        <conn input="divide1.value2" output="number1"/>
+        <conn input="range1.step" output="divide1"/>
+        <conn input="hsb_color1.brightness" output="range1"/>
+        <conn input="divide2.value1" output="frame1"/>
+        <conn input="coordinates1.angle" output="divide2"/>
+        <conn input="combine1.list1" output="rect1"/>
+        <conn input="combine1.list2" output="colorize1"/>
+        <conn input="hsb_color1.hue" output="mod1"/>
+        <conn input="mod1.value1" output="divide2"/>
+    </node>
+</ndbx>

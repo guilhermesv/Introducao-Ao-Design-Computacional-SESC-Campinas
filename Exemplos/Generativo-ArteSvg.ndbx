@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="1ea43748-83bb-4ab1-973e-fdeb0beed348">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine2">
+        <node name="align1" position="10.00,-1.00" prototype="corevector.align"/>
+        <node name="color1" position="14.00,4.00" prototype="color.color">
+            <port name="color" type="color" value="#f14f4fff"/>
+        </node>
+        <node name="color2" position="14.00,3.00" prototype="color.color">
+            <port name="color" type="color" value="#d0a07cff"/>
+        </node>
+        <node name="color3" position="14.00,2.00" prototype="color.color">
+            <port name="color" type="color" value="#262756ff"/>
+        </node>
+        <node name="colorize1" position="5.00,9.00" prototype="corevector.colorize"/>
+        <node name="colorize2" position="-3.00,10.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#02ecb0ff"/>
+        </node>
+        <node name="combine1" position="14.00,5.00" prototype="list.combine"/>
+        <node name="combine2" position="-1.00,14.00" prototype="list.combine"/>
+        <node name="count1" position="5.00,2.00" prototype="list.count"/>
+        <node name="import_svg1" position="10.00,-3.00" prototype="corevector.import_svg">
+            <port name="file" type="string" value="Generativo-ArteSvg.svg"/>
+        </node>
+        <node name="make_strings1" position="5.00,6.00" prototype="string.make_strings">
+            <port name="string" type="string" value="0;45;90;135;180"/>
+        </node>
+        <node name="pick1" position="10.00,7.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+            <port name="seed" type="int" value="1"/>
+        </node>
+        <node name="random_numbers1" position="5.00,3.00" prototype="math.random_numbers">
+            <port name="start" type="float" value="80.0"/>
+            <port name="end" type="float" value="300.0"/>
+        </node>
+        <node name="random_numbers2" position="10.00,6.00" prototype="math.random_numbers">
+            <port name="seed" type="int" value="14"/>
+        </node>
+        <node name="rect1" position="1.00,-3.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="rect2" position="-3.00,9.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="rotate1" position="5.00,7.00" prototype="corevector.rotate"/>
+        <node name="scale1" position="5.00,5.00" prototype="corevector.scale"/>
+        <node name="scatter1" position="1.00,-2.00" prototype="corevector.scatter">
+            <port name="amount" type="int" value="19"/>
+            <port name="seed" type="int" value="69"/>
+        </node>
+        <node name="translate1" position="1.00,12.00" prototype="corevector.translate"/>
+        <node name="ungroup1" position="10.00,-2.00" prototype="corevector.ungroup"/>
+        <conn input="scatter1.shape" output="rect1"/>
+        <conn input="ungroup1.shape" output="import_svg1"/>
+        <conn input="count1.list" output="scatter1"/>
+        <conn input="random_numbers1.amount" output="count1"/>
+        <conn input="scale1.scale" output="random_numbers1"/>
+        <conn input="align1.shape" output="ungroup1"/>
+        <conn input="scale1.shape" output="align1"/>
+        <conn input="translate1.translate" output="scatter1"/>
+        <conn input="rotate1.shape" output="scale1"/>
+        <conn input="rotate1.angle" output="make_strings1"/>
+        <conn input="colorize1.shape" output="rotate1"/>
+        <conn input="translate1.shape" output="colorize1"/>
+        <conn input="combine1.list1" output="color1"/>
+        <conn input="combine1.list2" output="color2"/>
+        <conn input="combine1.list3" output="color3"/>
+        <conn input="pick1.list" output="combine1"/>
+        <conn input="random_numbers2.amount" output="count1"/>
+        <conn input="pick1.seed" output="random_numbers2"/>
+        <conn input="colorize1.fill" output="pick1"/>
+        <conn input="colorize2.shape" output="rect2"/>
+        <conn input="combine2.list1" output="colorize2"/>
+        <conn input="combine2.list3" output="translate1"/>
+    </node>
+</ndbx>

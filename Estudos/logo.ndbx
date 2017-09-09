@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="72201cbd-bff4-4517-8f3b-9c4a1b2e260e">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate1">
+        <node name="align1" position="4.00,-2.00" prototype="corevector.align"/>
+        <node name="centroid1" position="7.00,4.00" prototype="corevector.centroid"/>
+        <node name="count1" position="0.00,0.00" prototype="list.count"/>
+        <node name="divide1" position="10.00,-3.00" prototype="math.divide">
+            <port name="value2" type="float" value="3.0"/>
+        </node>
+        <node name="frame1" position="10.00,-4.00" prototype="core.frame"/>
+        <node name="import_svg1" position="4.00,-4.00" prototype="corevector.import_svg">
+            <port name="file" type="string" value="logo.svg"/>
+        </node>
+        <node name="number1" position="11.00,4.00" prototype="math.number">
+            <port name="value" type="float" value="320.0"/>
+        </node>
+        <node name="random_numbers1" position="0.00,1.00" prototype="math.random_numbers">
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <node name="rotate1" position="3.00,5.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="-45.0"/>
+        </node>
+        <node name="translate1" position="5.00,9.00" prototype="corevector.translate"/>
+        <node name="ungroup1" position="4.00,-3.00" prototype="corevector.ungroup"/>
+        <node name="wave1" position="1.00,3.00" prototype="math.wave">
+            <port name="max" type="float" value="-45.0"/>
+            <port name="offset" type="float" value="74.0"/>
+        </node>
+        <node name="wave2" position="11.00,2.00" prototype="math.wave">
+            <port name="max" type="float" value="320.0"/>
+            <port name="offset" type="float" value="74.0"/>
+        </node>
+        <node name="wiggle1" position="7.00,6.00" prototype="corevector.wiggle">
+            <port name="offset" type="point" value="0.00,0.00"/>
+            <port name="seed" type="int" value="21"/>
+        </node>
+        <conn input="ungroup1.shape" output="import_svg1"/>
+        <conn input="centroid1.shape" output="ungroup1"/>
+        <conn input="align1.shape" output="ungroup1"/>
+        <conn input="rotate1.shape" output="align1"/>
+        <conn input="translate1.shape" output="rotate1"/>
+        <conn input="wiggle1.shape" output="centroid1"/>
+        <conn input="translate1.translate" output="wiggle1"/>
+        <conn input="wiggle1.offset" output="number1"/>
+        <conn input="rotate1.angle" output="wave1"/>
+        <conn input="number1.value" output="wave2"/>
+        <conn input="count1.list" output="ungroup1"/>
+        <conn input="random_numbers1.amount" output="count1"/>
+        <conn input="wave1.max" output="random_numbers1"/>
+        <conn input="divide1.value1" output="frame1"/>
+        <conn input="wave2.offset" output="divide1"/>
+        <conn input="wave1.offset" output="divide1"/>
+    </node>
+</ndbx>

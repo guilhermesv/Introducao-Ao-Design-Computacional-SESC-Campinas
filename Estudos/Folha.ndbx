@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="0c235a0d-3c4d-411a-b193-18cbd4286615">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="Seed" position="11.00,1.00" prototype="math.number">
+            <port name="value" type="float" value="74.0"/>
+        </node>
+        <node name="combine1" position="4.00,8.00" prototype="list.combine"/>
+        <node name="grid1" position="5.00,2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="1"/>
+            <port name="rows" type="int" value="3"/>
+            <port name="width" type="float" value="1.0"/>
+            <port name="position" type="point" value="0.00,-200.00"/>
+        </node>
+        <node name="negate1" position="11.00,3.00" prototype="math.negate"/>
+        <node name="pick1" position="5.00,4.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+            <port name="seed" type="int" value="-49"/>
+        </node>
+        <node name="pick2" position="2.00,4.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+            <port name="seed" type="int" value="-58"/>
+        </node>
+        <node name="quad_curve1" position="5.00,6.00" prototype="corevector.quad_curve">
+            <port name="distance" type="float" value="200.0"/>
+        </node>
+        <node name="quad_curve2" position="2.00,6.00" prototype="corevector.quad_curve">
+            <port name="distance" type="float" value="-200.0"/>
+        </node>
+        <conn input="pick1.list" output="grid1"/>
+        <conn input="quad_curve1.point2" output="pick1"/>
+        <conn input="pick2.list" output="grid1"/>
+        <conn input="quad_curve2.point2" output="pick2"/>
+        <conn input="combine1.list1" output="quad_curve2"/>
+        <conn input="combine1.list2" output="quad_curve1"/>
+        <conn input="pick1.seed" output="negate1"/>
+        <conn input="pick2.seed" output="Seed"/>
+        <conn input="negate1.value" output="Seed"/>
+    </node>
+</ndbx>

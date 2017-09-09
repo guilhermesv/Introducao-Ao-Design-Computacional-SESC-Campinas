@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="2e168341-f4f2-42c9-ae1a-7d4aa9b6e0a4">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="pie">
+        <node name="combine1" position="14.00,14.00" prototype="list.combine"/>
+        <node name="convert_range1" position="-3.00,7.00" prototype="math.convert_range">
+            <port name="target_end" type="float" value="360.0"/>
+        </node>
+        <node name="convert_range2" position="12.00,7.00" prototype="math.convert_range">
+            <port name="target_end" type="float" value="360.0"/>
+        </node>
+        <node name="divide1" position="-3.00,4.00" prototype="math.divide"/>
+        <node name="divide2" position="12.00,4.00" prototype="math.divide"/>
+        <node name="hsb_color1" position="1.00,9.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="255.0"/>
+            <port name="brightness" type="float" value="255.0"/>
+        </node>
+        <node name="hsb_color2" position="14.00,10.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="255.0"/>
+            <port name="brightness" type="float" value="255.0"/>
+        </node>
+        <node name="hsb_color3" position="18.00,10.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="255.0"/>
+            <port name="brightness" type="float" value="360.0"/>
+            <port name="alpha" type="float" value="360.0"/>
+            <port name="range" type="float" value="360.0"/>
+        </node>
+        <node comment="https://www.nodebox.net/node/documentation/using/data-visualization.html" name="null1" position="-3.00,-4.00" prototype="corevector.null"/>
+        <node name="number1" position="-3.00,-2.00" prototype="math.number">
+            <port name="value" type="float" value="7.0"/>
+        </node>
+        <node name="number2" position="12.00,-2.00" prototype="math.number">
+            <port name="value" type="float" value="6.0"/>
+        </node>
+        <node name="percentage" position="-3.00,5.00" prototype="math.multiply">
+            <port name="value2" type="float" value="100.0"/>
+        </node>
+        <node name="percentage1" position="12.00,5.00" prototype="math.multiply">
+            <port name="value2" type="float" value="100.0"/>
+        </node>
+        <node name="pie" position="-3.00,11.00" prototype="core.network" renderedChild="colorize1">
+            <node name="arc1" position="-7.00,10.00" prototype="corevector.arc"/>
+            <node name="colorize1" position="-7.00,12.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#dd0000ff"/>
+            </node>
+            <node name="slice1" position="-7.00,7.00" prototype="list.slice"/>
+            <node name="sum2" position="-7.00,8.00" prototype="math.sum"/>
+            <port childReference="slice1.list" description="The input list." label="" name="list" range="list" type="list" widget="none"/>
+            <port childReference="arc1.degrees" description="The amount of degrees of the arc." label="" name="degrees" range="value" type="float" value="45.0" widget="float"/>
+            <port childReference="slice1.size" description="The amount of items to take from the list." label="" min="0.0" name="sliceSize" range="value" type="int" value="10" widget="int"/>
+            <port childReference="colorize1.fill" description="The new fill color. Set alpha to 0 for no fill." label="" name="fill" range="value" type="color" value="#dd0000ff" widget="color"/>
+            <conn input="sum2.values" output="slice1"/>
+            <conn input="arc1.start_angle" output="sum2"/>
+            <conn input="colorize1.shape" output="arc1"/>
+        </node>
+        <node name="pie1" position="12.00,11.00" prototype="core.network" renderedChild="colorize1">
+            <node name="arc1" position="-7.00,10.00" prototype="corevector.arc"/>
+            <node name="colorize1" position="-7.00,12.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#dd0000ff"/>
+            </node>
+            <node name="raio" position="0.00,7.00" prototype="math.number">
+                <port name="value" type="float" value="217.0"/>
+            </node>
+            <node name="slice1" position="-7.00,6.00" prototype="list.slice"/>
+            <node name="sum2" position="-7.00,7.00" prototype="math.sum"/>
+            <port childReference="slice1.list" description="The input list." label="" name="list" range="list" type="list" widget="none"/>
+            <port childReference="arc1.degrees" description="The amount of degrees of the arc." label="" name="degrees" range="value" type="float" value="45.0" widget="float"/>
+            <port childReference="slice1.size" description="The amount of items to take from the list." label="" min="0.0" name="sliceSize" range="value" type="int" value="10" widget="int"/>
+            <port childReference="colorize1.fill" description="The new fill color. Set alpha to 0 for no fill." label="" name="fill" range="value" type="color" value="#dd0000ff" widget="color"/>
+            <port childReference="raio.value" description="" label="" name="raio" range="value" type="float" value="217.0" widget="float"/>
+            <conn input="sum2.values" output="slice1"/>
+            <conn input="arc1.start_angle" output="sum2"/>
+            <conn input="colorize1.shape" output="arc1"/>
+            <conn input="arc1.width" output="raio"/>
+            <conn input="arc1.height" output="raio"/>
+        </node>
+        <node name="pie2" position="16.00,11.00" prototype="core.network" renderedChild="colorize1">
+            <node name="arc1" position="-7.00,12.00" prototype="corevector.arc"/>
+            <node name="colorize1" position="-7.00,16.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#dd0000ff"/>
+            </node>
+            <node name="compound1" position="-7.00,14.00" prototype="corevector.compound">
+                <port name="function" type="string" value="subtracted"/>
+            </node>
+            <node name="ellipse1" position="-3.00,13.00" prototype="corevector.ellipse"/>
+            <node name="offset" position="-4.00,9.00" prototype="math.add">
+                <port name="value2" type="float" value="6.0"/>
+            </node>
+            <node name="raio" position="-4.00,8.00" prototype="math.number">
+                <port name="value" type="float" value="217.0"/>
+            </node>
+            <node name="slice1" position="-7.00,7.00" prototype="list.slice"/>
+            <node name="sum2" position="-7.00,8.00" prototype="math.sum"/>
+            <port childReference="slice1.list" description="The input list." label="" name="list" range="list" type="list" widget="none"/>
+            <port childReference="arc1.degrees" description="The amount of degrees of the arc." label="" name="degrees" range="value" type="float" value="45.0" widget="float"/>
+            <port childReference="slice1.size" description="The amount of items to take from the list." label="" min="0.0" name="sliceSize" range="value" type="int" value="10" widget="int"/>
+            <port childReference="raio.value" description="" label="" name="raio" range="value" type="float" value="217.0" widget="float"/>
+            <port childReference="offset.value2" description="" label="" name="Offset" range="value" type="float" value="6.0" widget="float"/>
+            <port childReference="colorize1.fill" description="The new fill color. Set alpha to 0 for no fill." label="" name="fill" range="value" type="color" value="#dd0000ff" widget="color"/>
+            <conn input="sum2.values" output="slice1"/>
+            <conn input="arc1.start_angle" output="sum2"/>
+            <conn input="offset.value1" output="raio"/>
+            <conn input="arc1.width" output="offset"/>
+            <conn input="arc1.height" output="offset"/>
+            <conn input="compound1.shape1" output="arc1"/>
+            <conn input="compound1.shape2" output="ellipse1"/>
+            <conn input="colorize1.shape" output="compound1"/>
+            <conn input="ellipse1.width" output="raio"/>
+            <conn input="ellipse1.height" output="raio"/>
+        </node>
+        <node name="random_numbers1" position="-3.00,0.00" prototype="math.random_numbers"/>
+        <node name="random_numbers2" position="2.00,7.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="3"/>
+            <port name="end" type="float" value="255.0"/>
+        </node>
+        <node name="random_numbers3" position="12.00,0.00" prototype="math.random_numbers">
+            <port name="seed" type="int" value="1"/>
+        </node>
+        <node name="random_numbers4" position="14.00,9.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="9"/>
+            <port name="end" type="float" value="255.0"/>
+            <port name="seed" type="int" value="1"/>
+        </node>
+        <node name="random_numbers5" position="16.00,0.00" prototype="math.random_numbers">
+            <port name="seed" type="int" value="2"/>
+        </node>
+        <node name="random_numbers6" position="21.00,8.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="3"/>
+            <port name="end" type="float" value="255.0"/>
+        </node>
+        <node name="random_numbers7" position="18.00,8.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="3"/>
+            <port name="start" type="float" value="180.0"/>
+            <port name="end" type="float" value="360.0"/>
+        </node>
+        <node name="range1" position="1.00,4.00" prototype="math.range"/>
+        <node name="range2" position="12.00,9.00" prototype="math.range"/>
+        <node name="sum1" position="-2.00,2.00" prototype="math.sum"/>
+        <node name="sum2" position="13.00,2.00" prototype="math.sum"/>
+        <conn input="random_numbers1.amount" output="number1"/>
+        <conn input="sum1.values" output="random_numbers1"/>
+        <conn input="divide1.value1" output="random_numbers1"/>
+        <conn input="divide1.value2" output="sum1"/>
+        <conn input="percentage.value1" output="divide1"/>
+        <conn input="convert_range1.value" output="percentage"/>
+        <conn input="pie.list" output="convert_range1"/>
+        <conn input="pie.degrees" output="convert_range1"/>
+        <conn input="range1.end" output="number1"/>
+        <conn input="pie.sliceSize" output="range1"/>
+        <conn input="pie.fill" output="hsb_color1"/>
+        <conn input="hsb_color1.hue" output="random_numbers2"/>
+        <conn input="random_numbers3.amount" output="number2"/>
+        <conn input="sum2.values" output="random_numbers3"/>
+        <conn input="divide2.value1" output="random_numbers3"/>
+        <conn input="divide2.value2" output="sum2"/>
+        <conn input="percentage1.value1" output="divide2"/>
+        <conn input="convert_range2.value" output="percentage1"/>
+        <conn input="pie1.list" output="convert_range2"/>
+        <conn input="pie1.degrees" output="convert_range2"/>
+        <conn input="range2.end" output="number2"/>
+        <conn input="pie1.sliceSize" output="range2"/>
+        <conn input="pie1.fill" output="hsb_color2"/>
+        <conn input="hsb_color2.hue" output="random_numbers4"/>
+        <conn input="random_numbers5.amount" output="number2"/>
+        <conn input="pie1.raio" output="random_numbers5"/>
+        <conn input="pie2.list" output="convert_range2"/>
+        <conn input="pie2.degrees" output="convert_range2"/>
+        <conn input="pie2.raio" output="random_numbers5"/>
+        <conn input="combine1.list1" output="pie1"/>
+        <conn input="combine1.list2" output="pie2"/>
+        <conn input="pie2.sliceSize" output="range2"/>
+        <conn input="pie2.fill" output="hsb_color3"/>
+        <conn input="random_numbers6.amount" output="number2"/>
+        <conn input="hsb_color3.saturation" output="random_numbers6"/>
+        <conn input="random_numbers7.amount" output="number2"/>
+        <conn input="hsb_color3.hue" output="random_numbers7"/>
+    </node>
+</ndbx>

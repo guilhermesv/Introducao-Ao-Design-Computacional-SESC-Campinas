@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="87d13ca1-f7fd-4b06-b6a8-648b9398369a">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="colorize1">
+        <node name="add1" position="4.00,6.00" prototype="math.add"/>
+        <node name="add2" position="0.00,2.00" prototype="math.add">
+            <port name="value2" type="float" value="1.0"/>
+        </node>
+        <node name="add3" position="20.00,2.00" prototype="math.add">
+            <port name="value2" type="float" value="1.0"/>
+        </node>
+        <node name="add4" position="24.00,6.00" prototype="math.add"/>
+        <node name="arc1" position="2.00,8.00" prototype="corevector.arc">
+            <port name="degrees" type="float" value="193.0"/>
+            <port name="type" type="string" value="open"/>
+        </node>
+        <node name="arc2" position="22.00,8.00" prototype="corevector.arc">
+            <port name="degrees" type="float" value="193.0"/>
+        </node>
+        <node name="arc3" position="26.00,8.00" prototype="corevector.arc">
+            <port name="degrees" type="float" value="193.0"/>
+            <port name="type" type="string" value="open"/>
+        </node>
+        <node name="colorize1" position="2.00,9.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="7.0"/>
+        </node>
+        <node name="colorize2" position="22.00,9.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="10.0"/>
+        </node>
+        <node name="colorize3" position="26.00,9.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="3.0"/>
+        </node>
+        <node name="combine1" position="22.00,15.00" prototype="list.combine"/>
+        <node name="frame1" position="7.00,0.00" prototype="core.frame"/>
+        <node name="frame2" position="27.00,0.00" prototype="core.frame"/>
+        <node name="group1" position="22.00,10.00" prototype="corevector.group"/>
+        <node name="group2" position="26.00,10.00" prototype="corevector.group"/>
+        <node name="hsb_color1" position="34.00,6.00" prototype="color.hsb_color">
+            <port name="saturation" type="float" value="58.0"/>
+            <port name="brightness" type="float" value="255.0"/>
+        </node>
+        <node name="multiply1" position="0.00,5.00" prototype="math.multiply">
+            <port name="value2" type="float" value="18.0"/>
+        </node>
+        <node name="multiply2" position="7.00,4.00" prototype="math.multiply"/>
+        <node name="multiply3" position="20.00,5.00" prototype="math.multiply">
+            <port name="value2" type="float" value="22.0"/>
+        </node>
+        <node name="multiply4" position="27.00,4.00" prototype="math.multiply"/>
+        <node name="number1" position="3.00,-2.00" prototype="math.number">
+            <port name="value" type="float" value="11.0"/>
+        </node>
+        <node name="number2" position="23.00,-2.00" prototype="math.number">
+            <port name="value" type="float" value="11.0"/>
+        </node>
+        <node name="random_numbers1" position="4.00,3.00" prototype="math.random_numbers">
+            <port name="end" type="float" value="360.0"/>
+            <port name="seed" type="int" value="7"/>
+        </node>
+        <node name="random_numbers2" position="7.00,3.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="0"/>
+            <port name="start" type="float" value="0.25"/>
+            <port name="end" type="float" value="5.0"/>
+            <port name="seed" type="int" value="4"/>
+        </node>
+        <node name="random_numbers3" position="10.00,3.00" prototype="math.random_numbers">
+            <port name="start" type="float" value="139.0"/>
+            <port name="end" type="float" value="200.0"/>
+            <port name="seed" type="int" value="11"/>
+        </node>
+        <node name="random_numbers4" position="24.00,3.00" prototype="math.random_numbers">
+            <port name="end" type="float" value="360.0"/>
+            <port name="seed" type="int" value="7"/>
+        </node>
+        <node name="random_numbers5" position="30.00,3.00" prototype="math.random_numbers">
+            <port name="start" type="float" value="139.0"/>
+            <port name="end" type="float" value="200.0"/>
+            <port name="seed" type="int" value="11"/>
+        </node>
+        <node name="random_numbers6" position="27.00,3.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="0"/>
+            <port name="start" type="float" value="1.0"/>
+            <port name="end" type="float" value="5.0"/>
+            <port name="seed" type="int" value="4"/>
+        </node>
+        <node name="random_numbers7" position="34.00,3.00" prototype="math.random_numbers">
+            <port name="end" type="float" value="255.0"/>
+            <port name="seed" type="int" value="106"/>
+        </node>
+        <node name="range1" position="0.00,4.00" prototype="math.range">
+            <port name="start" type="float" value="1.0"/>
+        </node>
+        <node name="range2" position="20.00,4.00" prototype="math.range">
+            <port name="start" type="float" value="1.0"/>
+        </node>
+        <node name="reverse1" position="20.00,6.00" prototype="list.reverse"/>
+        <node name="scale1" position="22.00,11.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="150.00,150.00"/>
+        </node>
+        <node name="scale2" position="26.00,11.00" prototype="corevector.scale">
+            <port name="scale" type="point" value="160.00,160.00"/>
+        </node>
+        <node name="ungroup1" position="22.00,12.00" prototype="corevector.ungroup"/>
+        <node name="ungroup2" position="26.00,12.00" prototype="corevector.ungroup"/>
+        <node name="wiggle1" position="22.00,13.00" prototype="corevector.wiggle">
+            <port name="offset" type="point" value="2.00,2.00"/>
+            <port name="seed" type="int" value="1648"/>
+        </node>
+        <node name="wiggle2" position="26.00,13.00" prototype="corevector.wiggle">
+            <port name="offset" type="point" value="4.00,4.00"/>
+            <port name="seed" type="int" value="1648"/>
+        </node>
+        <conn input="add1.value1" output="random_numbers1"/>
+        <conn input="arc1.start_angle" output="add1"/>
+        <conn input="colorize1.shape" output="arc1"/>
+        <conn input="random_numbers1.amount" output="number1"/>
+        <conn input="add2.value1" output="number1"/>
+        <conn input="range1.end" output="add2"/>
+        <conn input="multiply1.value1" output="range1"/>
+        <conn input="arc1.width" output="multiply1"/>
+        <conn input="arc1.height" output="multiply1"/>
+        <conn input="multiply2.value1" output="frame1"/>
+        <conn input="add1.value2" output="multiply2"/>
+        <conn input="random_numbers2.amount" output="number1"/>
+        <conn input="multiply2.value2" output="random_numbers2"/>
+        <conn input="random_numbers3.amount" output="number1"/>
+        <conn input="arc1.degrees" output="random_numbers3"/>
+        <conn input="add4.value1" output="random_numbers4"/>
+        <conn input="arc2.start_angle" output="add4"/>
+        <conn input="colorize2.shape" output="arc2"/>
+        <conn input="random_numbers4.amount" output="number2"/>
+        <conn input="add3.value1" output="number2"/>
+        <conn input="range2.end" output="add3"/>
+        <conn input="multiply3.value1" output="range2"/>
+        <conn input="multiply4.value1" output="frame2"/>
+        <conn input="add4.value2" output="multiply4"/>
+        <conn input="random_numbers6.amount" output="number2"/>
+        <conn input="multiply4.value2" output="random_numbers6"/>
+        <conn input="random_numbers5.amount" output="number2"/>
+        <conn input="arc2.degrees" output="random_numbers5"/>
+        <conn input="random_numbers7.amount" output="number2"/>
+        <conn input="hsb_color1.hue" output="random_numbers7"/>
+        <conn input="colorize2.fill" output="hsb_color1"/>
+        <conn input="reverse1.list" output="multiply3"/>
+        <conn input="arc2.width" output="reverse1"/>
+        <conn input="arc2.height" output="reverse1"/>
+        <conn input="group1.shapes" output="colorize2"/>
+        <conn input="scale1.shape" output="group1"/>
+        <conn input="ungroup1.shape" output="scale1"/>
+        <conn input="wiggle1.shape" output="ungroup1"/>
+        <conn input="wiggle1.seed" output="frame2"/>
+        <conn input="arc3.start_angle" output="add4"/>
+        <conn input="colorize3.shape" output="arc3"/>
+        <conn input="arc3.degrees" output="random_numbers5"/>
+        <conn input="arc3.width" output="reverse1"/>
+        <conn input="arc3.height" output="reverse1"/>
+        <conn input="group2.shapes" output="colorize3"/>
+        <conn input="scale2.shape" output="group2"/>
+        <conn input="ungroup2.shape" output="scale2"/>
+        <conn input="wiggle2.shape" output="ungroup2"/>
+        <conn input="wiggle2.seed" output="frame2"/>
+        <conn input="combine1.list1" output="wiggle1"/>
+        <conn input="combine1.list2" output="wiggle2"/>
+    </node>
+</ndbx>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="b7e496a7-2efc-4059-b0aa-042aa7170069">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="link1">
+        <node name="add1" position="2.00,6.00" prototype="math.add">
+            <port name="value2" type="float" value="3.0"/>
+        </node>
+        <node name="add2" position="12.00,6.00" prototype="math.add">
+            <port name="value2" type="float" value="3.0"/>
+        </node>
+        <node name="add4" position="2.00,24.00" prototype="math.add">
+            <port name="value2" type="float" value="3.0"/>
+        </node>
+        <node name="add5" position="9.00,24.00" prototype="math.add">
+            <port name="value2" type="float" value="3.0"/>
+        </node>
+        <node name="add6" position="16.00,24.00" prototype="math.add">
+            <port name="value2" type="float" value="3.0"/>
+        </node>
+        <node name="align1" position="-1.00,8.00" prototype="corevector.align">
+            <port name="valign" type="string" value="top"/>
+        </node>
+        <node name="align2" position="9.00,8.00" prototype="corevector.align">
+            <port name="valign" type="string" value="top"/>
+        </node>
+        <node name="align4" position="-1.00,26.00" prototype="corevector.align">
+            <port name="valign" type="string" value="top"/>
+        </node>
+        <node name="align5" position="6.00,26.00" prototype="corevector.align">
+            <port name="valign" type="string" value="top"/>
+        </node>
+        <node name="align6" position="13.00,26.00" prototype="corevector.align">
+            <port name="valign" type="string" value="top"/>
+        </node>
+        <node name="combine1" position="7.00,35.00" prototype="list.combine"/>
+        <node name="link1" position="5.00,15.00" prototype="corevector.link"/>
+        <node name="link2" position="5.00,33.00" prototype="corevector.link"/>
+        <node name="link3" position="10.00,33.00" prototype="corevector.link"/>
+        <node name="make_point1" position="2.00,9.00" prototype="corevector.make_point"/>
+        <node name="make_point2" position="12.00,9.00" prototype="corevector.make_point">
+            <port name="x" type="float" value="396.0"/>
+        </node>
+        <node name="make_point4" position="2.00,27.00" prototype="corevector.make_point"/>
+        <node name="make_point5" position="9.00,27.00" prototype="corevector.make_point">
+            <port name="x" type="float" value="382.0"/>
+        </node>
+        <node name="make_point6" position="16.00,27.00" prototype="corevector.make_point">
+            <port name="x" type="float" value="518.0"/>
+        </node>
+        <node name="random_numbers1" position="2.00,4.00" prototype="math.random_numbers"/>
+        <node name="random_numbers2" position="12.00,4.00" prototype="math.random_numbers">
+            <port name="end" type="float" value="20.0"/>
+        </node>
+        <node name="random_numbers3" position="2.00,22.00" prototype="math.random_numbers"/>
+        <node name="random_numbers4" position="9.00,22.00" prototype="math.random_numbers">
+            <port name="seed" type="int" value="1"/>
+        </node>
+        <node name="random_numbers5" position="16.00,22.00" prototype="math.random_numbers">
+            <port name="seed" type="int" value="11"/>
+        </node>
+        <node name="rect1" position="-1.00,6.00" prototype="corevector.rect">
+            <port name="width" type="float" value="16.0"/>
+        </node>
+        <node name="rect2" position="9.00,6.00" prototype="corevector.rect">
+            <port name="width" type="float" value="16.0"/>
+        </node>
+        <node name="rect3" position="-1.00,24.00" prototype="corevector.rect">
+            <port name="width" type="float" value="0.0"/>
+        </node>
+        <node name="rect4" position="6.00,24.00" prototype="corevector.rect">
+            <port name="width" type="float" value="0.0"/>
+        </node>
+        <node name="rect5" position="13.00,24.00" prototype="corevector.rect">
+            <port name="width" type="float" value="0.0"/>
+        </node>
+        <node name="running_total1" position="2.00,8.00" prototype="math.running_total"/>
+        <node name="running_total2" position="12.00,8.00" prototype="math.running_total"/>
+        <node name="running_total3" position="2.00,26.00" prototype="math.running_total"/>
+        <node name="running_total4" position="9.00,26.00" prototype="math.running_total"/>
+        <node name="running_total5" position="16.00,26.00" prototype="math.running_total"/>
+        <node name="translate1" position="-1.00,11.00" prototype="corevector.translate"/>
+        <node name="translate2" position="9.00,11.00" prototype="corevector.translate"/>
+        <node name="translate4" position="-1.00,29.00" prototype="corevector.translate"/>
+        <node name="translate5" position="6.00,29.00" prototype="corevector.translate"/>
+        <node name="translate6" position="13.00,29.00" prototype="corevector.translate"/>
+        <conn input="rect1.height" output="random_numbers1"/>
+        <conn input="add1.value1" output="random_numbers1"/>
+        <conn input="make_point1.y" output="running_total1"/>
+        <conn input="translate1.translate" output="make_point1"/>
+        <conn input="align1.shape" output="rect1"/>
+        <conn input="translate1.shape" output="align1"/>
+        <conn input="running_total1.values" output="add1"/>
+        <conn input="rect2.height" output="random_numbers2"/>
+        <conn input="add2.value1" output="random_numbers2"/>
+        <conn input="make_point2.y" output="running_total2"/>
+        <conn input="translate2.translate" output="make_point2"/>
+        <conn input="align2.shape" output="rect2"/>
+        <conn input="translate2.shape" output="align2"/>
+        <conn input="running_total2.values" output="add2"/>
+        <conn input="link1.shape2" output="translate2"/>
+        <conn input="link1.shape1" output="translate1"/>
+        <conn input="rect3.height" output="random_numbers3"/>
+        <conn input="add4.value1" output="random_numbers3"/>
+        <conn input="make_point4.y" output="running_total3"/>
+        <conn input="translate4.translate" output="make_point4"/>
+        <conn input="align4.shape" output="rect3"/>
+        <conn input="translate4.shape" output="align4"/>
+        <conn input="running_total3.values" output="add4"/>
+        <conn input="link2.shape1" output="translate4"/>
+        <conn input="rect4.height" output="random_numbers4"/>
+        <conn input="add5.value1" output="random_numbers4"/>
+        <conn input="make_point5.y" output="running_total4"/>
+        <conn input="translate5.translate" output="make_point5"/>
+        <conn input="align5.shape" output="rect4"/>
+        <conn input="translate5.shape" output="align5"/>
+        <conn input="running_total4.values" output="add5"/>
+        <conn input="link2.shape2" output="translate5"/>
+        <conn input="rect5.height" output="random_numbers5"/>
+        <conn input="add6.value1" output="random_numbers5"/>
+        <conn input="make_point6.y" output="running_total5"/>
+        <conn input="translate6.translate" output="make_point6"/>
+        <conn input="align6.shape" output="rect5"/>
+        <conn input="translate6.shape" output="align6"/>
+        <conn input="running_total5.values" output="add6"/>
+        <conn input="link3.shape1" output="translate5"/>
+        <conn input="link3.shape2" output="translate6"/>
+        <conn input="combine1.list1" output="link2"/>
+        <conn input="combine1.list2" output="link3"/>
+    </node>
+</ndbx>

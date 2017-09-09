@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="54efa31c-4d8a-4dd7-b47d-993dd4ec5d5b">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="translate3">
+        <node name="Ger_Grade" position="6.00,6.00" prototype="core.network" renderedChild="group1">
+            <node name="Diametro" position="0.00,0.00" prototype="math.number">
+                <port name="value" type="float" value="10.0"/>
+            </node>
+            <node name="Grade" position="3.00,0.00" prototype="math.number">
+                <port name="value" type="float" value="2.0"/>
+            </node>
+            <node name="Tamanho" position="6.00,0.00" prototype="math.number">
+                <port name="value" type="float" value="62.0"/>
+            </node>
+            <node name="ellipse1" position="0.00,2.00" prototype="corevector.ellipse">
+                <port name="width" type="float" value="10.0"/>
+                <port name="height" type="float" value="10.0"/>
+            </node>
+            <node name="grid1" position="3.00,2.00" prototype="corevector.grid">
+                <port name="columns" type="int" value="2"/>
+                <port name="rows" type="int" value="2"/>
+                <port name="width" type="float" value="60.0"/>
+                <port name="height" type="float" value="60.0"/>
+            </node>
+            <node name="group1" position="0.00,5.00" prototype="corevector.group"/>
+            <node name="translate1" position="0.00,4.00" prototype="corevector.translate"/>
+            <port childReference="Diametro.value" description="" label="" name="diametro" range="value" type="float" value="10.0" widget="float"/>
+            <port childReference="Grade.value" description="" label="" name="grade" range="value" type="float" value="2.0" widget="float"/>
+            <port childReference="Tamanho.value" description="" label="" name="tamanho" range="value" type="float" value="62.0" widget="float"/>
+            <conn input="translate1.shape" output="ellipse1"/>
+            <conn input="translate1.translate" output="grid1"/>
+            <conn input="ellipse1.width" output="Diametro"/>
+            <conn input="ellipse1.height" output="Diametro"/>
+            <conn input="grid1.columns" output="Grade"/>
+            <conn input="grid1.rows" output="Grade"/>
+            <conn input="grid1.width" output="Tamanho"/>
+            <conn input="grid1.height" output="Tamanho"/>
+            <conn input="group1.shapes" output="translate1"/>
+        </node>
+        <node name="Ger_Grade1" position="16.00,6.00" prototype="core.network" renderedChild="group1">
+            <node name="Diametro" position="0.00,0.00" prototype="math.number">
+                <port name="value" type="float" value="10.0"/>
+            </node>
+            <node name="Grade" position="3.00,0.00" prototype="math.number">
+                <port name="value" type="float" value="2.0"/>
+            </node>
+            <node name="Tamanho" position="6.00,0.00" prototype="math.number">
+                <port name="value" type="float" value="62.0"/>
+            </node>
+            <node name="ellipse1" position="0.00,2.00" prototype="corevector.ellipse">
+                <port name="width" type="float" value="10.0"/>
+                <port name="height" type="float" value="10.0"/>
+            </node>
+            <node name="grid1" position="3.00,2.00" prototype="corevector.grid">
+                <port name="columns" type="int" value="2"/>
+                <port name="rows" type="int" value="2"/>
+                <port name="width" type="float" value="60.0"/>
+                <port name="height" type="float" value="60.0"/>
+            </node>
+            <node name="group1" position="0.00,5.00" prototype="corevector.group"/>
+            <node name="translate1" position="0.00,4.00" prototype="corevector.translate"/>
+            <port childReference="Diametro.value" description="" label="" name="diametro" range="value" type="float" value="10.0" widget="float"/>
+            <port childReference="Grade.value" description="" label="" name="grade" range="value" type="float" value="2.0" widget="float"/>
+            <port childReference="Tamanho.value" description="" label="" name="tamanho" range="value" type="float" value="62.0" widget="float"/>
+            <conn input="translate1.shape" output="ellipse1"/>
+            <conn input="translate1.translate" output="grid1"/>
+            <conn input="ellipse1.width" output="Diametro"/>
+            <conn input="ellipse1.height" output="Diametro"/>
+            <conn input="grid1.columns" output="Grade"/>
+            <conn input="grid1.rows" output="Grade"/>
+            <conn input="grid1.width" output="Tamanho"/>
+            <conn input="grid1.height" output="Tamanho"/>
+            <conn input="group1.shapes" output="translate1"/>
+        </node>
+        <node name="Reticula" position="25.00,6.00" prototype="core.network" renderedChild="fit1">
+            <node name="compare1" position="31.00,0.00" prototype="math.compare">
+                <port name="value2" type="float" value="1.0"/>
+                <port name="comparator" type="string" value="&gt;"/>
+            </node>
+            <node name="divide1" position="27.00,2.00" prototype="math.divide">
+                <port name="value1" type="float" value="100.0"/>
+                <port name="value2" type="float" value="100.0"/>
+            </node>
+            <node name="ellipse1" position="27.00,4.00" prototype="corevector.ellipse"/>
+            <node name="fit1" position="27.00,12.00" prototype="corevector.fit"/>
+            <node name="grid3" position="31.00,6.00" prototype="corevector.grid">
+                <port name="columns" type="int" value="2"/>
+                <port name="rows" type="int" value="2"/>
+                <port name="width" type="float" value="50.0"/>
+                <port name="height" type="float" value="50.0"/>
+            </node>
+            <node name="group1" position="27.00,9.00" prototype="corevector.group"/>
+            <node name="multiply1" position="31.00,4.00" prototype="math.multiply"/>
+            <node name="number3" position="27.00,-3.00" prototype="math.number">
+                <port name="value" type="float" value="4.0"/>
+            </node>
+            <node name="number4" position="28.00,10.00" prototype="math.number">
+                <port name="value" type="float" value="100.0"/>
+            </node>
+            <node name="subtract1" position="31.00,-1.00" prototype="math.subtract">
+                <port name="value2" type="float" value="1.0"/>
+            </node>
+            <node name="switch1" position="31.00,2.00" prototype="list.switch"/>
+            <node name="translate3" position="27.00,8.00" prototype="corevector.translate"/>
+            <port childReference="number3.value" description="" label="" name="NumeroDePontos" range="value" type="float" value="4.0" widget="float"/>
+            <port childReference="number4.value" description="" label="" name="TamanhoDoModulo" range="value" type="float" value="100.0" widget="float"/>
+            <conn input="translate3.shape" output="ellipse1"/>
+            <conn input="translate3.translate" output="grid3"/>
+            <conn input="group1.shapes" output="translate3"/>
+            <conn input="divide1.value2" output="number3"/>
+            <conn input="ellipse1.width" output="divide1"/>
+            <conn input="ellipse1.height" output="divide1"/>
+            <conn input="grid3.columns" output="number3"/>
+            <conn input="grid3.rows" output="number3"/>
+            <conn input="subtract1.value1" output="number3"/>
+            <conn input="compare1.value1" output="number3"/>
+            <conn input="switch1.index" output="compare1"/>
+            <conn input="switch1.input1" output="number3"/>
+            <conn input="switch1.input2" output="subtract1"/>
+            <conn input="multiply1.value1" output="switch1"/>
+            <conn input="multiply1.value2" output="divide1"/>
+            <conn input="grid3.width" output="multiply1"/>
+            <conn input="grid3.height" output="multiply1"/>
+            <conn input="fit1.shape" output="group1"/>
+            <conn input="fit1.width" output="number4"/>
+            <conn input="fit1.height" output="number4"/>
+        </node>
+        <node name="frame1" position="31.00,3.00" prototype="core.frame"/>
+        <node name="grid1" position="9.00,8.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="4"/>
+            <port name="rows" type="int" value="4"/>
+            <port name="width" type="float" value="800.0"/>
+            <port name="height" type="float" value="800.0"/>
+        </node>
+        <node name="grid2" position="19.00,8.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="4"/>
+            <port name="rows" type="int" value="4"/>
+            <port name="width" type="float" value="800.0"/>
+            <port name="height" type="float" value="800.0"/>
+        </node>
+        <node name="grid3" position="27.00,8.00" prototype="corevector.grid">
+            <port name="width" type="float" value="900.0"/>
+            <port name="height" type="float" value="900.0"/>
+        </node>
+        <node name="number1" position="9.00,6.00" prototype="math.number">
+            <port name="value" type="float" value="8.0"/>
+        </node>
+        <node name="number2" position="19.00,6.00" prototype="math.number">
+            <port name="value" type="float" value="8.0"/>
+        </node>
+        <node name="range1" position="6.00,5.00" prototype="math.range">
+            <port name="start" type="float" value="2.0"/>
+            <port name="end" type="float" value="9.0"/>
+        </node>
+        <node name="range2" position="16.00,5.00" prototype="math.range">
+            <port name="start" type="float" value="2.0"/>
+            <port name="end" type="float" value="9.0"/>
+        </node>
+        <node name="range3" position="25.00,3.00" prototype="math.range">
+            <port name="start" type="float" value="1.0"/>
+            <port name="end" type="float" value="7.0"/>
+        </node>
+        <node name="shift1" position="29.00,4.00" prototype="list.shift"/>
+        <node name="translate1" position="6.00,10.00" prototype="corevector.translate"/>
+        <node name="translate2" position="16.00,10.00" prototype="corevector.translate"/>
+        <node name="translate3" position="25.00,10.00" prototype="corevector.translate"/>
+        <conn input="translate1.shape" output="Ger_Grade"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="Ger_Grade.grade" output="range1"/>
+        <conn input="grid1.columns" output="number1"/>
+        <conn input="grid1.rows" output="number1"/>
+        <conn input="translate2.shape" output="Ger_Grade1"/>
+        <conn input="translate2.translate" output="grid2"/>
+        <conn input="Ger_Grade1.grade" output="range2"/>
+        <conn input="grid2.columns" output="number2"/>
+        <conn input="grid2.rows" output="number2"/>
+        <conn input="translate3.shape" output="Reticula"/>
+        <conn input="translate3.translate" output="grid3"/>
+        <conn input="shift1.list" output="range3"/>
+        <conn input="shift1.amount" output="frame1"/>
+        <conn input="Reticula.NumeroDePontos" output="range3"/>
+    </node>
+</ndbx>

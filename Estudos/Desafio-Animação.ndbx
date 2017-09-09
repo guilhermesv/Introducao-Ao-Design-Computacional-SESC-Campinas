@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="b7b192f2-8b67-42bd-a1ed-5f646a28ac84">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="scale1">
+        <node name="add1" position="12.00,7.00" prototype="math.add">
+            <port name="value2" type="float" value="25.0"/>
+        </node>
+        <node name="compare1" position="15.00,10.00" prototype="math.compare"/>
+        <node name="ellipse1" position="9.00,9.00" prototype="corevector.ellipse"/>
+        <node name="frame1" position="16.00,5.00" prototype="core.frame"/>
+        <node name="rect1" position="6.00,9.00" prototype="corevector.rect"/>
+        <node name="scale1" position="9.00,14.00" prototype="corevector.scale"/>
+        <node name="switch1" position="8.00,12.00" prototype="list.switch"/>
+        <node name="wave1" position="12.00,9.00" prototype="math.wave">
+            <port name="period" type="float" value="100.0"/>
+            <port name="offset" type="float" value="50.0"/>
+        </node>
+        <node name="wave2" position="15.00,9.00" prototype="math.wave">
+            <port name="min" type="float" value="-100.0"/>
+            <port name="period" type="float" value="200.0"/>
+            <port name="type" type="string" value="square"/>
+        </node>
+        <conn input="switch1.input1" output="rect1"/>
+        <conn input="switch1.input2" output="ellipse1"/>
+        <conn input="scale1.shape" output="switch1"/>
+        <conn input="scale1.scale" output="wave1"/>
+        <conn input="compare1.value1" output="wave2"/>
+        <conn input="switch1.index" output="compare1"/>
+        <conn input="wave2.offset" output="frame1"/>
+        <conn input="add1.value1" output="frame1"/>
+        <conn input="wave1.offset" output="add1"/>
+    </node>
+</ndbx>

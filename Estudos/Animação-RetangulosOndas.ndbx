@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="2a4d1eaf-0bdf-43f3-a03e-45e46e5de6d1">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine1">
+        <node name="add1" position="5.00,-3.00" prototype="math.add"/>
+        <node name="add2" position="9.00,-3.00" prototype="math.add"/>
+        <node name="add3" position="10.00,-1.00" prototype="math.add">
+            <port name="value2" type="float" value="30.0"/>
+        </node>
+        <node name="align1" position="1.00,2.00" prototype="corevector.align">
+            <port name="valign" type="string" value="bottom"/>
+        </node>
+        <node name="combine1" position="2.00,7.00" prototype="list.combine"/>
+        <node name="frame1" position="9.00,-5.00" prototype="core.frame"/>
+        <node name="grid1" position="0.00,-2.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="60"/>
+            <port name="rows" type="int" value="1"/>
+            <port name="width" type="float" value="612.0"/>
+        </node>
+        <node name="range1" position="5.00,-5.00" prototype="math.range">
+            <port name="end" type="float" value="60.0"/>
+        </node>
+        <node name="rect1" position="1.00,1.00" prototype="corevector.rect">
+            <port name="width" type="float" value="3.0"/>
+        </node>
+        <node name="translate1" position="1.00,4.00" prototype="corevector.translate"/>
+        <node name="wave1" position="5.00,-2.00" prototype="math.wave"/>
+        <node name="wave2" position="9.00,-2.00" prototype="math.wave"/>
+        <conn input="align1.shape" output="rect1"/>
+        <conn input="add1.value1" output="range1"/>
+        <conn input="wave1.offset" output="add1"/>
+        <conn input="rect1.height" output="wave1"/>
+        <conn input="rect1.position" output="grid1"/>
+        <conn input="translate1.translate" output="grid1"/>
+        <conn input="translate1.shape" output="align1"/>
+        <conn input="add1.value2" output="frame1"/>
+        <conn input="combine1.list1" output="translate1"/>
+        <conn input="add2.value1" output="range1"/>
+        <conn input="wave2.offset" output="add2"/>
+        <conn input="add2.value2" output="frame1"/>
+        <conn input="add3.value1" output="wave2"/>
+    </node>
+</ndbx>
