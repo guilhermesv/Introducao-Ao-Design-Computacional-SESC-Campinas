@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="99a1672c-7c28-4baf-828f-8b8cf2daaa42">
+    <property name="canvasHeight" value="1000"/>
+    <property name="canvasWidth" value="1000"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine2">
+        <node name="align1" position="19.00,7.00" prototype="corevector.align"/>
+        <node name="align2" position="30.00,7.00" prototype="corevector.align"/>
+        <node name="change_case1" position="-2.00,7.00" prototype="string.change_case"/>
+        <node name="color1" position="10.00,5.00" prototype="color.color">
+            <port name="color" type="color" value="#aada9eff"/>
+        </node>
+        <node name="color2" position="10.00,6.00" prototype="color.color">
+            <port name="color" type="color" value="#da9e9eff"/>
+        </node>
+        <node name="colorize1" position="-2.00,14.00" prototype="corevector.colorize"/>
+        <node name="colorize2" position="15.00,8.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+        </node>
+        <node name="colorize3" position="26.00,8.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ffffffff"/>
+        </node>
+        <node name="combine1" position="10.00,7.00" prototype="list.combine"/>
+        <node name="combine2" position="19.00,10.00" prototype="list.combine"/>
+        <node name="combine3" position="30.00,10.00" prototype="list.combine"/>
+        <node name="distinct1" position="6.00,7.00" prototype="list.distinct"/>
+        <node name="group1" position="19.00,6.00" prototype="corevector.group"/>
+        <node name="group2" position="30.00,6.00" prototype="corevector.group"/>
+        <node name="import_csv1" position="3.00,2.00" prototype="data.import_csv">
+            <port name="file" type="string" value="Zipmap-VogalConsoante.csv"/>
+        </node>
+        <node name="lookup1" position="6.00,5.00" prototype="data.lookup">
+            <port name="key" type="string" value="classificação"/>
+        </node>
+        <node name="lookup2" position="3.00,5.00" prototype="data.lookup">
+            <port name="key" type="string" value="letra"/>
+        </node>
+        <node name="lookup3" position="3.00,10.00" prototype="data.lookup"/>
+        <node name="lookup4" position="3.00,12.00" prototype="data.lookup"/>
+        <node name="make_strings1" position="-2.00,4.00" prototype="string.make_strings">
+            <port name="separator" type="string" value=" "/>
+        </node>
+        <node name="make_strings3" position="19.00,3.00" prototype="string.make_strings"/>
+        <node name="make_strings4" position="30.00,3.00" prototype="string.make_strings"/>
+        <node name="network1" position="19.00,4.00" prototype="core.network" renderedChild="switch1">
+            <node name="align1" position="15.00,16.00" prototype="corevector.align">
+                <port name="halign" type="string" value="left"/>
+            </node>
+            <node name="change_case2" position="15.00,5.00" prototype="string.change_case"/>
+            <node name="color3" position="27.00,3.00" prototype="color.color">
+                <port name="color" type="color" value="#aada9e5f"/>
+            </node>
+            <node name="color4" position="27.00,4.00" prototype="color.color">
+                <port name="color" type="color" value="#da9e9eff"/>
+            </node>
+            <node name="colorize1" position="12.00,16.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#00000000"/>
+            </node>
+            <node name="colorize2" position="15.00,12.00" prototype="corevector.colorize"/>
+            <node name="combine2" position="27.00,5.00" prototype="list.combine"/>
+            <node name="distinct2" position="23.00,5.00" prototype="list.distinct"/>
+            <node name="equals1" position="12.00,0.00" prototype="string.equals">
+                <port name="equals" type="string" value="* "/>
+            </node>
+            <node name="group1" position="15.00,15.00" prototype="corevector.group"/>
+            <node name="import_csv2" position="20.00,0.00" prototype="data.import_csv">
+                <port name="file" type="string" value="Zipmap-VogalConsoante.csv"/>
+            </node>
+            <node name="lookup5" position="20.00,8.00" prototype="data.lookup"/>
+            <node name="lookup6" position="20.00,3.00" prototype="data.lookup">
+                <port name="key" type="string" value="letra"/>
+            </node>
+            <node name="lookup7" position="20.00,10.00" prototype="data.lookup"/>
+            <node name="lookup8" position="23.00,3.00" prototype="data.lookup">
+                <port name="key" type="string" value="classificação"/>
+            </node>
+            <node name="make_strings2" position="15.00,2.00" prototype="string.make_strings">
+                <port name="separator" type="string" value=" "/>
+            </node>
+            <node name="multiply1" position="12.00,1.00" prototype="math.multiply"/>
+            <node name="rect1" position="12.00,15.00" prototype="corevector.rect">
+                <port name="width" type="float" value="0.0"/>
+                <port name="height" type="float" value="40.0"/>
+            </node>
+            <node name="stack2" position="15.00,14.00" prototype="corevector.stack">
+                <port name="margin" type="float" value="11.0"/>
+            </node>
+            <node name="string2" position="15.00,-2.00" prototype="string.string">
+                <port name="value" type="string" value="Mudaram as estações e nada mudou"/>
+            </node>
+            <node name="sub_string2" position="15.00,4.00" prototype="string.sub_string">
+                <port name="end" type="int" value="1"/>
+            </node>
+            <node name="switch1" position="12.00,18.00" prototype="list.switch"/>
+            <node name="textpath2" position="15.00,10.00" prototype="corevector.textpath">
+                <port name="font_name" type="string" value="Poppins Bold"/>
+                <port name="font_size" type="float" value="31.0"/>
+            </node>
+            <node name="zip_map3" position="20.00,5.00" prototype="list.zip_map"/>
+            <node name="zip_map4" position="25.00,7.00" prototype="list.zip_map"/>
+            <port childReference="string2.value" description="" label="" name="value" range="value" type="string" value="Mudaram as estações e nada mudou" widget="string"/>
+            <conn input="make_strings2.string" output="string2"/>
+            <conn input="sub_string2.string" output="make_strings2"/>
+            <conn input="lookup8.list" output="import_csv2"/>
+            <conn input="lookup6.list" output="import_csv2"/>
+            <conn input="zip_map3.keys" output="lookup6"/>
+            <conn input="zip_map3.values" output="lookup8"/>
+            <conn input="lookup5.list" output="zip_map3"/>
+            <conn input="change_case2.string" output="sub_string2"/>
+            <conn input="lookup5.key" output="change_case2"/>
+            <conn input="distinct2.list" output="lookup8"/>
+            <conn input="combine2.list1" output="color4"/>
+            <conn input="combine2.list2" output="color3"/>
+            <conn input="zip_map4.keys" output="distinct2"/>
+            <conn input="zip_map4.values" output="combine2"/>
+            <conn input="lookup7.list" output="zip_map4"/>
+            <conn input="lookup7.key" output="lookup5"/>
+            <conn input="textpath2.text" output="make_strings2"/>
+            <conn input="colorize2.shape" output="textpath2"/>
+            <conn input="colorize2.fill" output="lookup7"/>
+            <conn input="stack2.shapes" output="colorize2"/>
+            <conn input="group1.shapes" output="stack2"/>
+            <conn input="align1.shape" output="group1"/>
+            <conn input="equals1.string" output="string2"/>
+            <conn input="multiply1.value1" output="equals1"/>
+            <conn input="switch1.index" output="multiply1"/>
+            <conn input="switch1.input1" output="align1"/>
+            <conn input="colorize1.shape" output="rect1"/>
+            <conn input="switch1.input2" output="colorize1"/>
+        </node>
+        <node name="network2" position="30.00,4.00" prototype="core.network" renderedChild="switch1">
+            <node name="align1" position="21.00,16.00" prototype="corevector.align">
+                <port name="halign" type="string" value="left"/>
+            </node>
+            <node name="change_case2" position="22.00,5.00" prototype="string.change_case"/>
+            <node name="characters1" position="21.00,2.00" prototype="string.characters"/>
+            <node name="color3" position="33.00,2.00" prototype="color.color">
+                <port name="color" type="color" value="#aada9eff"/>
+            </node>
+            <node name="color4" position="33.00,3.00" prototype="color.color">
+                <port name="color" type="color" value="#da9e9eff"/>
+            </node>
+            <node name="color5" position="36.00,3.00" prototype="color.color">
+                <port name="color" type="color" value="#00000000"/>
+            </node>
+            <node name="colorize1" position="17.00,15.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#00000000"/>
+            </node>
+            <node name="colorize3" position="21.00,12.00" prototype="corevector.colorize"/>
+            <node name="combine3" position="33.00,5.00" prototype="list.combine"/>
+            <node name="distinct2" position="29.00,5.00" prototype="list.distinct"/>
+            <node name="equals1" position="16.00,2.00" prototype="string.equals">
+                <port name="equals" type="string" value="* "/>
+            </node>
+            <node name="group1" position="21.00,15.00" prototype="corevector.group"/>
+            <node name="import_csv2" position="26.00,0.00" prototype="data.import_csv">
+                <port name="file" type="string" value="Zipmap-VogalConsoante2.csv"/>
+            </node>
+            <node name="lookup5" position="26.00,8.00" prototype="data.lookup"/>
+            <node name="lookup6" position="26.00,3.00" prototype="data.lookup">
+                <port name="key" type="string" value="letra"/>
+            </node>
+            <node name="lookup7" position="26.00,10.00" prototype="data.lookup"/>
+            <node name="lookup8" position="29.00,3.00" prototype="data.lookup">
+                <port name="key" type="string" value="classificação"/>
+            </node>
+            <node name="multiply1" position="16.00,3.00" prototype="math.multiply"/>
+            <node name="rect1" position="17.00,14.00" prototype="corevector.rect">
+                <port name="width" type="float" value="0.0"/>
+                <port name="height" type="float" value="40.0"/>
+            </node>
+            <node name="stack3" position="21.00,14.00" prototype="corevector.stack">
+                <port name="margin" type="float" value="7.0"/>
+            </node>
+            <node name="string2" position="21.00,0.00" prototype="string.string">
+                <port name="value" type="string" value="Mudaram as estações e nada mudou"/>
+            </node>
+            <node name="switch1" position="17.00,17.00" prototype="list.switch"/>
+            <node name="textpath2" position="21.00,10.00" prototype="corevector.textpath">
+                <port name="font_name" type="string" value="Poppins SemiBold"/>
+            </node>
+            <node name="zip_map3" position="26.00,5.00" prototype="list.zip_map"/>
+            <node name="zip_map4" position="31.00,7.00" prototype="list.zip_map"/>
+            <port childReference="string2.value" description="" label="" name="value" range="value" type="string" value="Mudaram as estações e nada mudou" widget="string"/>
+            <conn input="lookup8.list" output="import_csv2"/>
+            <conn input="lookup6.list" output="import_csv2"/>
+            <conn input="zip_map3.keys" output="lookup6"/>
+            <conn input="zip_map3.values" output="lookup8"/>
+            <conn input="lookup5.list" output="zip_map3"/>
+            <conn input="distinct2.list" output="lookup8"/>
+            <conn input="combine3.list1" output="color4"/>
+            <conn input="combine3.list2" output="color3"/>
+            <conn input="zip_map4.keys" output="distinct2"/>
+            <conn input="zip_map4.values" output="combine3"/>
+            <conn input="lookup7.list" output="zip_map4"/>
+            <conn input="lookup7.key" output="lookup5"/>
+            <conn input="colorize3.shape" output="textpath2"/>
+            <conn input="colorize3.fill" output="lookup7"/>
+            <conn input="stack3.shapes" output="colorize3"/>
+            <conn input="characters1.string" output="string2"/>
+            <conn input="change_case2.string" output="characters1"/>
+            <conn input="textpath2.text" output="characters1"/>
+            <conn input="group1.shapes" output="stack3"/>
+            <conn input="equals1.string" output="string2"/>
+            <conn input="multiply1.value1" output="equals1"/>
+            <conn input="switch1.index" output="multiply1"/>
+            <conn input="colorize1.shape" output="rect1"/>
+            <conn input="switch1.input2" output="colorize1"/>
+            <conn input="align1.shape" output="group1"/>
+            <conn input="switch1.input1" output="align1"/>
+            <conn input="combine3.list3" output="color5"/>
+            <conn input="lookup5.key" output="change_case2"/>
+        </node>
+        <node name="rect1" position="15.00,7.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="rect2" position="26.00,7.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="stack1" position="-2.00,16.00" prototype="corevector.stack">
+            <port name="margin" type="float" value="11.0"/>
+        </node>
+        <node name="stack2" position="19.00,5.00" prototype="corevector.stack">
+            <port name="direction" type="string" value="s"/>
+            <port name="margin" type="float" value="9.0"/>
+        </node>
+        <node name="stack3" position="30.00,5.00" prototype="corevector.stack">
+            <port name="direction" type="string" value="s"/>
+            <port name="margin" type="float" value="9.0"/>
+        </node>
+        <node name="string1" position="-2.00,2.00" prototype="string.string">
+            <port name="value" type="string" value="Mudaram as estações e nada mudou"/>
+        </node>
+        <node name="string3" position="19.00,2.00" prototype="string.string">
+            <port name="value" type="string" value="Mudaram as estações ;E nada mudou ;Mas eu sei que alguma coisa aconteceu ;Está tudo assim tão diferente ;* ;Se lembra quando a gente ;Chegou um dia a acreditar ;Que tudo era pra sempre ;Sem saber ;Que o pra sempre sempre acaba ;* ;Mas nada vai conseguir mudar ;O que ficou ;Quando penso em alguém, só penso em você ;E aí então estamos bem ;* ;Mesmo com tantos motivos ;Pra deixar tudo como está ;E nem desistir, nem tentar ;Agora tanto faz ;Estamos indo de volta pra casa"/>
+        </node>
+        <node name="string4" position="30.00,2.00" prototype="string.string">
+            <port name="value" type="string" value="Mudaram as estações ;E nada mudou ;Mas eu sei que alguma coisa aconteceu ;Está tudo assim tão diferente ;* ;Se lembra quando a gente ;Chegou um dia a acreditar ;Que tudo era pra sempre ;Sem saber ;Que o pra sempre sempre acaba ;* ;Mas nada vai conseguir mudar ;O que ficou ;Quando penso em alguém, só penso em você ;E aí então estamos bem ;* ;Mesmo com tantos motivos ;Pra deixar tudo como está ;E nem desistir, nem tentar ;Agora tanto faz ;Estamos indo de volta pra casa"/>
+        </node>
+        <node name="sub_string1" position="-2.00,6.00" prototype="string.sub_string">
+            <port name="end" type="int" value="1"/>
+        </node>
+        <node name="textpath1" position="-2.00,12.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="Poppins SemiBold"/>
+        </node>
+        <node name="zip_map1" position="3.00,7.00" prototype="list.zip_map"/>
+        <node name="zip_map2" position="8.00,9.00" prototype="list.zip_map"/>
+        <conn input="make_strings1.string" output="string1"/>
+        <conn input="sub_string1.string" output="make_strings1"/>
+        <conn input="lookup1.list" output="import_csv1"/>
+        <conn input="lookup2.list" output="import_csv1"/>
+        <conn input="zip_map1.keys" output="lookup2"/>
+        <conn input="zip_map1.values" output="lookup1"/>
+        <conn input="lookup3.list" output="zip_map1"/>
+        <conn input="change_case1.string" output="sub_string1"/>
+        <conn input="lookup3.key" output="change_case1"/>
+        <conn input="distinct1.list" output="lookup1"/>
+        <conn input="combine1.list1" output="color2"/>
+        <conn input="combine1.list2" output="color1"/>
+        <conn input="zip_map2.keys" output="distinct1"/>
+        <conn input="zip_map2.values" output="combine1"/>
+        <conn input="lookup4.list" output="zip_map2"/>
+        <conn input="lookup4.key" output="lookup3"/>
+        <conn input="textpath1.text" output="make_strings1"/>
+        <conn input="colorize1.shape" output="textpath1"/>
+        <conn input="colorize1.fill" output="lookup4"/>
+        <conn input="stack1.shapes" output="colorize1"/>
+        <conn input="stack2.shapes" output="network1"/>
+        <conn input="make_strings3.string" output="string3"/>
+        <conn input="network1.value" output="make_strings3"/>
+        <conn input="group1.shapes" output="stack2"/>
+        <conn input="align1.shape" output="group1"/>
+        <conn input="colorize2.shape" output="rect1"/>
+        <conn input="combine2.list1" output="colorize2"/>
+        <conn input="combine2.list2" output="align1"/>
+        <conn input="make_strings4.string" output="string4"/>
+        <conn input="group2.shapes" output="stack3"/>
+        <conn input="align2.shape" output="group2"/>
+        <conn input="colorize3.shape" output="rect2"/>
+        <conn input="combine3.list1" output="colorize3"/>
+        <conn input="combine3.list2" output="align2"/>
+        <conn input="network2.value" output="make_strings4"/>
+        <conn input="stack3.shapes" output="network2"/>
+    </node>
+</ndbx>
