@@ -4,7 +4,7 @@
     <property name="canvasWidth" value="1000"/>
     <property name="canvasX" value="0"/>
     <property name="canvasY" value="0"/>
-    <node name="root" prototype="core.network" renderedChild="combine2">
+    <node name="root" prototype="core.network" renderedChild="stack2">
         <node name="align1" position="19.00,7.00" prototype="corevector.align"/>
         <node name="align2" position="30.00,7.00" prototype="corevector.align"/>
         <node name="change_case1" position="-2.00,7.00" prototype="string.change_case"/>

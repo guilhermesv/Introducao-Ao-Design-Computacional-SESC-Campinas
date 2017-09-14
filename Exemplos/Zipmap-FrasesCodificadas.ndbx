@@ -26,7 +26,7 @@
         </node>
         <node name="combine1" position="11.00,23.00" prototype="list.combine"/>
         <node name="combine2" position="34.00,26.00" prototype="list.combine"/>
-        <node name="combine3" position="64.00,30.00" prototype="list.combine"/>
+        <node name="combine3" position="62.00,34.00" prototype="list.combine"/>
         <node name="combine5" position="63.00,14.00" prototype="list.combine"/>
         <node name="combine6" position="70.00,14.00" prototype="list.combine"/>
         <node name="count1" position="-6.00,5.00" prototype="list.count"/>
@@ -130,7 +130,6 @@
             <port name="end" type="float" value="255.0"/>
             <port name="seed" type="int" value="2"/>
         </node>
-        <node name="range1" position="1.00,7.00" prototype="math.range"/>
         <node name="range2" position="38.00,7.00" prototype="math.range"/>
         <node name="range3" position="66.00,5.00" prototype="math.range"/>
         <node name="rect1" position="60.00,27.00" prototype="corevector.rect">
@@ -179,7 +178,6 @@
         <conn input="distinct1.list" output="characters1"/>
         <conn input="count1.list" output="distinct1"/>
         <conn input="random_numbers1.amount" output="count1"/>
-        <conn input="range1.end" output="count1"/>
         <conn input="ellipse1.width" output="random_numbers1"/>
         <conn input="ellipse1.height" output="random_numbers1"/>
         <conn input="zip_map1.keys" output="distinct1"/>
@@ -248,7 +246,6 @@
         <conn input="add1.value2" output="multiply1"/>
         <conn input="ellipse3.height" output="add1"/>
         <conn input="ellipse3.width" output="add1"/>
-        <conn input="combine2.list2" output="translate4"/>
         <conn input="change_case4.string" output="string4"/>
         <conn input="characters4.string" output="change_case4"/>
         <conn input="distinct4.list" output="characters4"/>
@@ -289,6 +286,7 @@
         <conn input="combine3.list2" output="translate6"/>
         <conn input="colorize4.shape" output="rect1"/>
         <conn input="combine3.list1" output="colorize4"/>
+        <conn input="combine2.list2" output="translate4"/>
         <conn input="combine1.list2" output="translate3"/>
     </node>
 </ndbx>

@@ -4,32 +4,33 @@
     <property name="canvasWidth" value="1000"/>
     <property name="canvasX" value="0"/>
     <property name="canvasY" value="0"/>
-    <node name="root" prototype="core.network" renderedChild="align1">
+    <node name="root" prototype="core.network" renderedChild="combine2">
         <node name="add1" position="42.00,7.00" prototype="math.add">
             <port name="value1" type="float" value="9.0"/>
         </node>
-        <node name="align1" position="-13.00,22.00" prototype="corevector.align"/>
+        <node name="align1" position="-14.00,19.00" prototype="corevector.align"/>
         <node name="align2" position="23.00,11.00" prototype="corevector.align"/>
         <node name="align3" position="39.00,10.00" prototype="corevector.align">
             <port name="position" type="point" value="0.00,150.00"/>
             <port name="valign" type="string" value="top"/>
         </node>
         <node name="align4" position="27.00,26.00" prototype="corevector.align"/>
+        <node name="align5" position="-13.00,51.00" prototype="corevector.align"/>
         <node name="centroid1" position="43.00,13.00" prototype="corevector.centroid"/>
         <node name="color1" position="-24.00,1.00" prototype="color.color">
             <port name="color" type="color" value="#0000ffff"/>
         </node>
         <node name="color10" position="21.00,8.00" prototype="color.color"/>
-        <node name="color11" position="-4.00,4.00" prototype="color.color">
+        <node name="color11" position="-5.00,0.00" prototype="color.color">
             <port name="color" type="color" value="#363636ff"/>
         </node>
-        <node name="color12" position="-4.00,5.00" prototype="color.color">
+        <node name="color12" position="-5.00,1.00" prototype="color.color">
             <port name="color" type="color" value="#ff7dffff"/>
         </node>
-        <node name="color13" position="-4.00,2.00" prototype="color.color">
+        <node name="color13" position="-5.00,-2.00" prototype="color.color">
             <port name="color" type="color" value="#00c4ebff"/>
         </node>
-        <node name="color14" position="-4.00,3.00" prototype="color.color">
+        <node name="color14" position="-5.00,-1.00" prototype="color.color">
             <port name="color" type="color" value="#ff4343ff"/>
         </node>
         <node name="color15" position="35.00,3.00" prototype="color.color">
@@ -44,8 +45,20 @@
         <node name="color18" position="35.00,2.00" prototype="color.color">
             <port name="color" type="color" value="#ff4343ff"/>
         </node>
+        <node name="color19" position="-4.00,33.00" prototype="color.color">
+            <port name="color" type="color" value="#363636ff"/>
+        </node>
         <node name="color2" position="-24.00,2.00" prototype="color.color">
             <port name="color" type="color" value="#ff0000ff"/>
+        </node>
+        <node name="color20" position="-4.00,34.00" prototype="color.color">
+            <port name="color" type="color" value="#ff7dffff"/>
+        </node>
+        <node name="color21" position="-4.00,31.00" prototype="color.color">
+            <port name="color" type="color" value="#00c4ebff"/>
+        </node>
+        <node name="color22" position="-4.00,32.00" prototype="color.color">
+            <port name="color" type="color" value="#ff4343ff"/>
         </node>
         <node name="color3" position="-24.00,3.00" prototype="color.color"/>
         <node name="color4" position="-24.00,4.00" prototype="color.color">
@@ -53,23 +66,32 @@
         </node>
         <node name="color9" position="47.00,7.00" prototype="color.color"/>
         <node name="colorize1" position="-34.00,10.00" prototype="corevector.colorize"/>
+        <node name="colorize10" position="0.00,43.00" prototype="corevector.colorize"/>
         <node name="colorize2" position="47.00,11.00" prototype="corevector.colorize"/>
         <node name="colorize3" position="23.00,12.00" prototype="corevector.colorize"/>
         <node name="colorize4" position="31.00,21.00" prototype="corevector.colorize"/>
-        <node name="colorize5" position="-14.00,11.00" prototype="corevector.colorize"/>
-        <node name="colorize6" position="-10.00,18.00" prototype="corevector.colorize">
+        <node name="colorize5" position="-15.00,8.00" prototype="corevector.colorize"/>
+        <node name="colorize6" position="-11.00,15.00" prototype="corevector.colorize">
             <port name="fill" type="color" value="#00000000"/>
             <port name="strokeWidth" type="float" value="4.0"/>
         </node>
-        <node name="colorize7" position="0.00,14.00" prototype="corevector.colorize"/>
+        <node name="colorize7" position="-1.00,11.00" prototype="corevector.colorize"/>
+        <node name="colorize8" position="-14.00,40.00" prototype="corevector.colorize"/>
+        <node name="colorize9" position="-10.00,47.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00000000"/>
+            <port name="strokeWidth" type="float" value="4.0"/>
+        </node>
         <node name="combine1" position="-24.00,5.00" prototype="list.combine"/>
+        <node name="combine10" position="-13.00,49.00" prototype="list.combine"/>
+        <node name="combine11" position="-4.00,35.00" prototype="list.combine"/>
         <node name="combine2" position="-37.00,14.00" prototype="list.combine"/>
         <node name="combine3" position="35.00,5.00" prototype="list.combine"/>
         <node name="combine4" position="23.00,14.00" prototype="list.combine"/>
         <node name="combine5" position="27.00,24.00" prototype="list.combine"/>
-        <node name="combine6" position="-4.00,6.00" prototype="list.combine"/>
-        <node name="combine7" position="-17.00,15.00" prototype="list.combine"/>
-        <node name="combine8" position="-13.00,20.00" prototype="list.combine"/>
+        <node name="combine6" position="-5.00,2.00" prototype="list.combine"/>
+        <node name="combine7" position="-18.00,12.00" prototype="list.combine"/>
+        <node name="combine8" position="-14.00,17.00" prototype="list.combine"/>
+        <node name="combine9" position="-17.00,44.00" prototype="list.combine"/>
         <node name="contador" position="39.00,5.00" prototype="core.network" renderedChild="sum2">
             <node name="cor3" position="41.00,1.00" prototype="data.lookup">
                 <port name="key" type="string" value="Cor"/>
@@ -95,16 +117,22 @@
         <node name="cor1" position="31.00,3.00" prototype="data.lookup">
             <port name="key" type="string" value="Cor"/>
         </node>
-        <node name="cor2" position="-11.00,4.00" prototype="data.lookup">
+        <node name="cor2" position="-12.00,1.00" prototype="data.lookup">
+            <port name="key" type="string" value="Cor"/>
+        </node>
+        <node name="cor3" position="-11.00,33.00" prototype="data.lookup">
             <port name="key" type="string" value="Cor"/>
         </node>
         <node name="count1" position="-35.00,5.00" prototype="list.count"/>
         <node name="count2" position="25.00,5.00" prototype="list.count"/>
-        <node name="count3" position="-15.00,6.00" prototype="list.count"/>
-        <node name="count4" position="-4.00,9.00" prototype="list.count"/>
+        <node name="count3" position="-16.00,3.00" prototype="list.count"/>
+        <node name="count4" position="-4.00,5.00" prototype="list.count"/>
+        <node name="count5" position="-15.00,35.00" prototype="list.count"/>
+        <node name="count6" position="-4.00,38.00" prototype="list.count"/>
         <node name="distinct1" position="-29.00,4.00" prototype="list.distinct"/>
         <node name="distinct2" position="31.00,4.00" prototype="list.distinct"/>
-        <node name="distinct3" position="-11.00,5.00" prototype="list.distinct"/>
+        <node name="distinct3" position="-12.00,2.00" prototype="list.distinct"/>
+        <node name="distinct4" position="-11.00,34.00" prototype="list.distinct"/>
         <node name="ellipse1" position="-34.00,9.00" prototype="corevector.ellipse">
             <port name="width" type="float" value="25.0"/>
             <port name="height" type="float" value="25.0"/>
@@ -113,28 +141,52 @@
             <port name="width" type="float" value="27.0"/>
             <port name="height" type="float" value="10.0"/>
         </node>
-        <node name="ellipse3" position="-14.00,10.00" prototype="corevector.ellipse">
+        <node name="ellipse3" position="-15.00,7.00" prototype="corevector.ellipse">
             <port name="width" type="float" value="25.0"/>
             <port name="height" type="float" value="25.0"/>
         </node>
-        <node name="grid1" position="-15.00,7.00" prototype="corevector.grid">
+        <node name="ellipse4" position="-14.00,39.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="25.0"/>
+            <port name="height" type="float" value="25.0"/>
+        </node>
+        <node name="ellipse5" position="-18.00,36.00" prototype="corevector.ellipse">
+            <port name="width" type="float" value="1000.0"/>
+            <port name="height" type="float" value="1000.0"/>
+        </node>
+        <node name="freehand1" position="-21.00,36.00" prototype="corevector.freehand">
+            <port name="path" type="string" value="M318.82,-972.22  311.85,-965.26  302.56,-958.29  295.59,-955.96  286.30,-946.67  270.04,-939.70  258.42,-935.06  249.13,-932.73  237.51,-925.76  221.25,-918.79  209.64,-916.47  195.70,-907.18  179.44,-902.53  163.18,-897.89  158.53,-893.24  149.24,-888.59  142.27,-886.27  126.01,-879.30  109.75,-874.66  102.78,-865.36  86.51,-858.39  70.25,-853.75  63.28,-849.10  53.99,-844.46  47.02,-839.81  40.05,-835.16  35.41,-830.52  26.12,-825.87  21.47,-823.55  16.82,-818.90  14.50,-816.58  9.85,-811.93  5.21,-807.29  0.56,-802.64  -1.76,-800.32  -6.41,-795.67  -11.05,-788.70  -18.02,-781.73  -22.67,-777.09  -27.32,-772.44  -29.64,-770.12  -34.28,-765.47  -38.93,-760.83  -41.25,-758.50  -43.58,-753.86  -45.90,-751.53  -50.55,-746.89  -55.19,-742.24  -57.51,-739.92  -59.84,-737.60  -59.84,-735.27 M160.85,-795.67  149.24,-788.70  137.62,-779.41  121.36,-765.47  100.45,-749.21  86.51,-735.27  77.22,-723.66  65.61,-712.04  63.28,-705.07  49.35,-693.46  42.38,-679.52  37.73,-674.87  26.12,-660.93  19.15,-649.32  7.53,-637.70  5.21,-633.06  -1.76,-626.09  -8.73,-616.80  -15.70,-609.83  -20.35,-605.18  -27.32,-595.89  -31.96,-588.92  -34.28,-581.95  -38.93,-574.98  -43.58,-565.69  -48.22,-556.40  -55.19,-542.46  -57.51,-537.81  -64.48,-521.55  -71.45,-509.94  -78.42,-496.00  -80.75,-489.03  -85.39,-472.77  -87.71,-468.12  -92.36,-454.18  -97.01,-444.89  -101.65,-435.60  -103.98,-430.95  -108.62,-417.01  -110.95,-405.40  -113.27,-391.46  -113.27,-384.49  -115.59,-375.20  -115.59,-365.91  -117.91,-356.61  -117.91,-351.97  -120.24,-342.68  -120.24,-338.03  -120.24,-335.71  -120.24,-333.38 M170.14,-486.71  163.18,-479.74  160.85,-470.44  149.24,-458.83  142.27,-444.89  137.62,-437.92  130.65,-430.95  126.01,-421.66  121.36,-405.40  114.39,-389.14  109.75,-377.52  107.42,-372.88  102.78,-358.94  100.45,-351.97  98.13,-335.71  91.16,-319.45  91.16,-312.48  88.84,-296.21  86.51,-277.63  84.19,-270.66  81.87,-252.08  79.55,-242.78  74.90,-226.52  70.25,-219.55  65.61,-207.94  60.96,-194.00  58.64,-187.03  56.31,-175.42  56.31,-170.77  51.67,-161.48  49.35,-147.54  47.02,-142.89  42.38,-131.28  42.38,-126.63  42.38,-112.69  40.05,-101.08  40.05,-91.79  40.05,-75.52  40.05,-61.59  40.05,-49.97  40.05,-45.32  40.05,-36.03  42.38,-33.71  42.38,-26.74  44.70,-24.42  44.70,-22.09  47.02,-17.45  47.02,-12.80  51.67,-5.83  51.67,-3.51  53.99,-1.19  56.31,5.78  56.31,8.11  60.96,17.40  65.61,24.37  67.93,31.34  70.25,35.98  72.58,38.31  74.90,42.95  77.22,47.60  77.22,49.92  79.55,49.92  79.55,54.57  81.87,59.21  84.19,61.54  84.19,66.18  86.51,68.51  88.84,73.15  88.84,75.47  93.48,80.12  93.48,82.44  95.81,84.77  95.81,89.41  95.81,91.74 M288.62,-52.29  290.94,-49.97  290.94,-38.36  290.94,-33.71  290.94,-26.74  290.94,-10.48  290.94,-3.51  288.62,12.75  288.62,17.40  288.62,26.69  288.62,35.98  288.62,40.63  290.94,47.60  293.27,61.54  295.59,68.51  300.24,82.44  302.56,89.41  307.21,98.70  309.53,101.03  311.85,108.00  314.17,112.64  318.82,117.29  321.14,119.61  328.11,126.58  330.44,128.90  332.76,131.23  335.08,133.55  339.73,138.20  342.05,140.52  346.70,147.49  349.02,152.14  351.34,154.46  353.67,159.10  358.31,163.75  360.64,166.07  365.28,170.72  367.60,173.04  369.93,175.37  372.25,177.69  374.57,177.69  374.57,180.01  376.90,180.01  379.22,182.33  381.54,186.98  383.87,189.30  386.19,191.63  390.84,196.27  395.48,200.92  397.80,203.24  402.45,207.89  404.77,210.21  407.10,212.53  411.74,217.18  414.07,219.50  416.39,221.83  421.03,226.47  425.68,233.44  428.00,235.77  432.65,240.41  434.97,242.73  439.62,247.38  441.94,249.70  444.27,254.35  446.59,256.67  448.91,263.64  451.23,265.96  453.56,270.61  453.56,272.93  455.88,277.58  458.20,277.58  458.20,279.90  458.20,282.23  460.53,282.23 "/>
+        </node>
+        <node name="grid1" position="-16.00,4.00" prototype="corevector.grid">
             <port name="columns" type="int" value="1"/>
             <port name="height" type="float" value="821.0"/>
         </node>
-        <node name="grid2" position="-4.00,10.00" prototype="corevector.grid">
+        <node name="grid2" position="-4.00,6.00" prototype="corevector.grid">
             <port name="columns" type="int" value="1"/>
             <port name="height" type="float" value="80.0"/>
             <port name="position" type="point" value="661.00,0.00"/>
         </node>
-        <node name="group1" position="-13.00,21.00" prototype="corevector.group"/>
+        <node name="grid3" position="-35.00,6.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="1"/>
+            <port name="height" type="float" value="821.0"/>
+        </node>
+        <node name="grid5" position="-4.00,39.00" prototype="corevector.grid">
+            <port name="columns" type="int" value="1"/>
+            <port name="height" type="float" value="80.0"/>
+            <port name="position" type="point" value="880.00,0.00"/>
+        </node>
+        <node name="group1" position="-14.00,18.00" prototype="corevector.group"/>
         <node name="group2" position="27.00,25.00" prototype="corevector.group"/>
+        <node name="group3" position="-13.00,50.00" prototype="corevector.group"/>
         <node name="import_csv1" position="-35.00,1.00" prototype="data.import_csv">
             <port name="file" type="string" value="Zipmap-ItensCor.csv"/>
         </node>
         <node name="import_csv2" position="25.00,-2.00" prototype="data.import_csv">
             <port name="file" type="string" value="Zipmap-ItensCor.csv"/>
         </node>
-        <node name="import_csv3" position="-15.00,2.00" prototype="data.import_csv">
+        <node name="import_csv3" position="-16.00,-1.00" prototype="data.import_csv">
+            <port name="file" type="string" value="Zipmap-ItensCor.csv"/>
+        </node>
+        <node name="import_csv4" position="-15.00,31.00" prototype="data.import_csv">
             <port name="file" type="string" value="Zipmap-ItensCor.csv"/>
         </node>
         <node name="item" position="-35.00,3.00" prototype="data.lookup">
@@ -143,22 +195,25 @@
         <node name="item1" position="25.00,3.00" prototype="data.lookup">
             <port name="key" type="string" value="Item"/>
         </node>
-        <node name="item2" position="-15.00,4.00" prototype="data.lookup">
+        <node name="item2" position="-16.00,1.00" prototype="data.lookup">
             <port name="key" type="string" value="Item"/>
         </node>
-        <node name="line1" position="-35.00,6.00" prototype="corevector.line">
-            <port name="point2" type="point" value="0.00,693.00"/>
+        <node name="item3" position="-15.00,33.00" prototype="data.lookup">
+            <port name="key" type="string" value="Item"/>
         </node>
         <node name="line2" position="25.00,6.00" prototype="corevector.line">
             <port name="point2" type="point" value="0.00,693.00"/>
         </node>
-        <node name="line3" position="-10.00,15.00" prototype="corevector.line"/>
+        <node name="line3" position="-11.00,12.00" prototype="corevector.line"/>
+        <node name="line4" position="-10.00,44.00" prototype="corevector.line"/>
         <node name="link1" position="31.00,19.00" prototype="corevector.link"/>
         <node name="lookup1" position="-29.00,8.00" prototype="data.lookup"/>
         <node name="lookup2" position="31.00,8.00" prototype="data.lookup"/>
         <node name="lookup3" position="33.00,16.00" prototype="data.lookup"/>
-        <node name="lookup4" position="-10.00,9.00" prototype="data.lookup"/>
-        <node name="lookup5" position="-5.00,13.00" prototype="data.lookup"/>
+        <node name="lookup4" position="-12.00,6.00" prototype="data.lookup"/>
+        <node name="lookup5" position="-5.00,9.00" prototype="data.lookup"/>
+        <node name="lookup6" position="-5.00,42.00" prototype="data.lookup"/>
+        <node name="lookup7" position="-10.00,38.00" prototype="data.lookup"/>
         <node name="make_point1" position="42.00,9.00" prototype="corevector.make_point">
             <port name="x" type="float" value="459.0"/>
         </node>
@@ -171,13 +226,19 @@
         <node name="nomeCor" position="42.00,3.00" prototype="string.string">
             <port name="value" type="string" value="azul"/>
         </node>
-        <node name="point1" position="-35.00,7.00" prototype="corevector.point"/>
+        <node name="point1" position="-18.00,38.00" prototype="corevector.point"/>
         <node name="point2" position="25.00,7.00" prototype="corevector.point"/>
         <node name="rect1" position="39.00,9.00" prototype="corevector.rect">
             <port name="width" type="float" value="22.0"/>
         </node>
-        <node name="round_segments1" position="-10.00,16.00" prototype="corevector.round_segments">
+        <node name="resample1" position="-18.00,37.00" prototype="corevector.resample">
+            <port name="method" type="string" value="amount"/>
+        </node>
+        <node name="round_segments1" position="-11.00,13.00" prototype="corevector.round_segments">
             <port name="d" type="float" value="325.0"/>
+        </node>
+        <node name="round_segments2" position="-10.00,45.00" prototype="corevector.round_segments">
+            <port name="d" type="float" value="148.0"/>
         </node>
         <node name="running_total1" position="42.00,8.00" prototype="math.running_total"/>
         <node name="sub_string1" position="47.00,6.00" prototype="string.sub_string">
@@ -198,29 +259,40 @@
             <port name="font_name" type="string" value="Segoe UI"/>
             <port name="align" type="string" value="LEFT"/>
         </node>
-        <node name="textpath4" position="-17.00,11.00" prototype="corevector.textpath">
+        <node name="textpath4" position="-18.00,8.00" prototype="corevector.textpath">
             <port name="font_name" type="string" value="Consolas Bold"/>
             <port name="align" type="string" value="RIGHT"/>
             <port name="position" type="point" value="-17.00,6.00"/>
         </node>
-        <node name="textpath5" position="0.00,11.00" prototype="corevector.textpath">
+        <node name="textpath5" position="-1.00,7.00" prototype="corevector.textpath">
             <port name="font_name" type="string" value="Consolas Bold"/>
             <port name="align" type="string" value="LEFT"/>
             <port name="position" type="point" value="8.00,9.00"/>
         </node>
-        <node name="translate1" position="0.00,13.00" prototype="corevector.translate"/>
+        <node name="textpath6" position="0.00,40.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="Consolas Bold"/>
+            <port name="align" type="string" value="LEFT"/>
+            <port name="position" type="point" value="8.00,9.00"/>
+        </node>
+        <node name="textpath7" position="-17.00,40.00" prototype="corevector.textpath">
+            <port name="font_name" type="string" value="Consolas Bold"/>
+            <port name="align" type="string" value="RIGHT"/>
+            <port name="position" type="point" value="-17.00,6.00"/>
+        </node>
+        <node name="translate1" position="-1.00,9.00" prototype="corevector.translate"/>
         <node name="translate2" position="45.00,16.00" prototype="corevector.translate"/>
         <node name="translate3" position="39.00,11.00" prototype="corevector.translate"/>
+        <node name="translate4" position="0.00,42.00" prototype="corevector.translate"/>
         <node name="translate5" position="-37.00,11.00" prototype="corevector.translate"/>
-        <node name="translate6" position="-17.00,12.00" prototype="corevector.translate"/>
+        <node name="translate6" position="-18.00,9.00" prototype="corevector.translate"/>
+        <node name="translate7" position="-17.00,41.00" prototype="corevector.translate"/>
         <node name="zip_map1" position="-27.00,6.00" prototype="list.zip_map"/>
         <node name="zip_map2" position="33.00,6.00" prototype="list.zip_map"/>
         <node name="zip_map3" position="34.00,14.00" prototype="list.zip_map"/>
-        <node name="zip_map4" position="-8.00,7.00" prototype="list.zip_map"/>
-        <node name="zip_map5" position="-4.00,11.00" prototype="list.zip_map"/>
-        <conn input="line1.points" output="count1"/>
-        <conn input="point1.value" output="line1"/>
-        <conn input="ellipse1.position" output="point1"/>
+        <node name="zip_map4" position="-10.00,4.00" prototype="list.zip_map"/>
+        <node name="zip_map5" position="-5.00,7.00" prototype="list.zip_map"/>
+        <node name="zip_map6" position="-8.00,36.00" prototype="list.zip_map"/>
+        <node name="zip_map7" position="-4.00,40.00" prototype="list.zip_map"/>
         <conn input="colorize1.shape" output="ellipse1"/>
         <conn input="item.list" output="import_csv1"/>
         <conn input="textpath1.text" output="item"/>
@@ -286,7 +358,6 @@
         <conn input="sub_string2.string" output="lookup2"/>
         <conn input="colorize3.fill" output="color10"/>
         <conn input="translate5.shape" output="textpath1"/>
-        <conn input="translate5.translate" output="point1"/>
         <conn input="combine2.list1" output="translate5"/>
         <conn input="combine2.list2" output="colorize1"/>
         <conn input="colorize5.shape" output="ellipse3"/>
@@ -337,5 +408,52 @@
         <conn input="combine3.list4" output="color16"/>
         <conn input="group2.shapes" output="combine5"/>
         <conn input="align4.shape" output="group2"/>
+        <conn input="grid3.rows" output="count1"/>
+        <conn input="translate5.translate" output="grid3"/>
+        <conn input="ellipse1.position" output="grid3"/>
+        <conn input="colorize8.shape" output="ellipse4"/>
+        <conn input="item3.list" output="import_csv4"/>
+        <conn input="textpath7.text" output="item3"/>
+        <conn input="count5.list" output="item3"/>
+        <conn input="cor3.list" output="import_csv4"/>
+        <conn input="distinct4.list" output="cor3"/>
+        <conn input="zip_map6.keys" output="distinct4"/>
+        <conn input="combine11.list1" output="color21"/>
+        <conn input="combine11.list2" output="color22"/>
+        <conn input="combine11.list3" output="color19"/>
+        <conn input="combine11.list4" output="color20"/>
+        <conn input="zip_map6.values" output="combine11"/>
+        <conn input="lookup7.list" output="zip_map6"/>
+        <conn input="lookup7.key" output="cor3"/>
+        <conn input="colorize8.fill" output="lookup7"/>
+        <conn input="translate7.shape" output="textpath7"/>
+        <conn input="combine9.list1" output="translate7"/>
+        <conn input="combine9.list2" output="colorize8"/>
+        <conn input="count6.list" output="distinct4"/>
+        <conn input="grid5.rows" output="count6"/>
+        <conn input="zip_map7.keys" output="distinct4"/>
+        <conn input="zip_map7.values" output="grid5"/>
+        <conn input="lookup6.list" output="zip_map7"/>
+        <conn input="lookup6.key" output="cor3"/>
+        <conn input="line4.point2" output="lookup6"/>
+        <conn input="round_segments2.shape" output="line4"/>
+        <conn input="colorize9.stroke" output="lookup7"/>
+        <conn input="colorize9.shape" output="round_segments2"/>
+        <conn input="textpath6.text" output="distinct4"/>
+        <conn input="colorize10.shape" output="translate4"/>
+        <conn input="colorize10.fill" output="combine11"/>
+        <conn input="translate4.shape" output="textpath6"/>
+        <conn input="translate4.translate" output="grid5"/>
+        <conn input="group3.shapes" output="combine10"/>
+        <conn input="align5.shape" output="group3"/>
+        <conn input="resample1.points" output="count5"/>
+        <conn input="point1.value" output="resample1"/>
+        <conn input="translate7.translate" output="point1"/>
+        <conn input="ellipse4.position" output="point1"/>
+        <conn input="line4.point1" output="point1"/>
+        <conn input="combine10.list4" output="colorize10"/>
+        <conn input="combine10.list5" output="combine9"/>
+        <conn input="combine10.list2" output="colorize9"/>
+        <conn input="resample1.shape" output="ellipse5"/>
     </node>
 </ndbx>
