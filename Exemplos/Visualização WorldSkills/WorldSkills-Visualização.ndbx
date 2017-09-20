@@ -4,7 +4,7 @@
     <property name="canvasWidth" value="1000"/>
     <property name="canvasX" value="0"/>
     <property name="canvasY" value="0"/>
-    <node name="root" prototype="core.network" renderedChild="combine6">
+    <node name="root" prototype="core.network" renderedChild="translate5">
         <node name="Member" position="-14.00,2.00" prototype="data.lookup">
             <port name="key" type="string" value="Member"/>
         </node>
@@ -268,7 +268,7 @@
             <port name="value2" type="float" value="81.0"/>
         </node>
         <node name="multiply5" position="46.00,4.00" prototype="math.multiply">
-            <port name="value2" type="float" value="56.0"/>
+            <port name="value2" type="float" value="192.0"/>
         </node>
         <node name="multiply6" position="38.00,4.00" prototype="math.multiply">
             <port name="value2" type="float" value="4.0"/>
